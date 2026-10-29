@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enquadramento do Produtor Rural</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- MENU LATERAL -->
+  <aside class="sidebar">
+
+    <button class="toggle-menu" onclick="toggleMenu()">
+      ☰
+    </button>
+
+    <nav>
+
+      <a href="index.html">
+        <span class="menu-icon">🏠</span>
+        <span class="menu-text">Início</span>
+      </a>
+
+      <a href="enquadramento.html">
+        <span class="menu-icon">🌾</span>
+        <span class="menu-text">Enquadramento</span>
+      </a>
+
+      <a href="credia.html">
+        <span class="menu-icon">🤖</span>
+        <span class="menu-text">CredIA Rural</span>
+      </a>
+
+    </nav>
+
+  </aside>
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <div class="content">
+
+    <header>
+      <h1>🌾 Enquadramento do Produtor Rural</h1>
+    </header>
+
+    <main>
+
+      <section class="card">
+
+        <h2>Dados do Produtor</h2>
+
+        <form id="formEnquadramento">
+
+          <div class="grupo">
+
+            <label>CAF (antigo DAP):</label>
+
+            <select name="caf">
+              <option value="SIM">Sim</option>
+              <option value="NAO">Não</option>
+            </select>
+
+          </div>
+
+          <h3 class="titulo-renda">
+            <span class="icone">🌾</span>
+            Rendas Agropecuárias (Anual)
+          </h3>
+
+          <div class="grid">
+
+            <label>Grãos:</label>
+            <input class="moeda" name="graos" value="R$ 0,00">
+
+            <label>Bovinos de leite:</label>
+            <input class="moeda" name="leite" value="R$ 0,00">
+
+            <label>Bovinos de corte:</label>
+            <input class="moeda" name="corte" value="R$ 0,00">
+
+            <label>Ovinos:</label>
+            <input class="moeda" name="ovinos" value="R$ 0,00">
+
+            <label>Caprinos:</label>
+            <input class="moeda" name="caprinos" value="R$ 0,00">
+
+            <label>Hortaliças e Verduras:</label>
+            <input class="moeda" name="hortas" value="R$ 0,00">
+
+            <label>Fruticultura:</label>
+            <input class="moeda" name="frutas" value="R$ 0,00">
+
+            <label>Cafeicultura:</label>
+            <input class="moeda" name="cafe" value="R$ 0,00">
+
+            <label>Búfalos:</label>
+            <input class="moeda" name="bufalos" value="R$ 0,00">
+
+            <label>Outros:</label>
+            <input class="moeda" name="outrosAgro" value="R$ 0,00">
+
+          </div>
+
+          <h3 class="titulo-renda">
+            <span class="icone">💼</span>
+            Demais Rendas (Anual)
+          </h3>
+
+          <div class="grid">
+
+            <label>Assalariado:</label>
+            <input class="moeda" name="assalariado" value="R$ 0,00">
+
+            <label>Aposentadoria:</label>
+            <input class="moeda" name="aposentadoria" value="R$ 0,00">
+
+            <label>Pró-labore:</label>
+            <input class="moeda" name="prolabore" value="R$ 0,00">
+
+            <label>Outros:</label>
+            <input class="moeda" name="outrosRenda" value="R$ 0,00">
+
+          </div>
+
+          <button type="submit" class="btn">
+            Calcular Enquadramento
+          </button>
+
+        </form>
+
+      </section>
+
+      <section class="card resultado-card">
+
+        <h2>📋 Resultado Detalhado</h2>
+
+        <div id="resultado"></div>
+
+      </section>
+
+      <section class="card grafico-card">
+
+        <h2>📊 Composição da Renda</h2>
+
+        <div class="grafico-container">
+          <canvas id="graficoPizza"></canvas>
+        </div>
+
+      </section>
+
+    </main>
+
+    <footer>
+      <p>© 2026 — Descomplica o CRU</p>
+    </footer>
+
+  </div>
+
+  <script src="menu.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="enquadramento.js"></script>
+
+</body>
+</html>

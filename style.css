@@ -1,0 +1,501 @@
+/* === Reset === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', Arial, sans-serif;
+  background: #f3f7f2;
+  color: #2f3e2f;
+  display: flex;
+}
+
+/* ==========================
+   MENU LATERAL
+========================== */
+
+.sidebar {
+  width: 220px;
+  background: #2e5e2e;
+  color: #fff;
+  padding: 20px 18px;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  box-shadow: 3px 0 8px rgba(0,0,0,0.15);
+  transition: width 0.3s ease, padding 0.3s ease;
+  overflow: hidden;
+}
+
+.sidebar.collapsed {
+  width: 60px;
+  padding: 20px 10px;
+}
+
+/* ==========================
+   BOTÃO DO MENU
+========================== */
+
+.toggle-menu {
+  width: 100%;
+  border: none;
+  background: rgba(255,255,255,0.12);
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 25px;
+  font-size: 18px;
+  transition: all 0.2s ease;
+}
+
+.toggle-menu:hover {
+  background: rgba(255,255,255,0.22);
+}
+
+/* ==========================
+   MENU
+========================== */
+
+.sidebar nav {
+  margin-top: 10px;
+}
+
+.sidebar nav a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  text-decoration: none;
+  padding: 12px 0;
+  font-size: 15px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.sidebar nav a:hover {
+  opacity: 0.85;
+}
+
+.menu-icon {
+  font-size: 20px;
+  min-width: 24px;
+  text-align: center;
+}
+
+.sidebar.collapsed .menu-text {
+  display: none;
+}
+
+.sidebar.collapsed nav a {
+  justify-content: center;
+}
+
+/* ==========================
+   CONTEÚDO PRINCIPAL
+========================== */
+
+.content {
+  margin-left: 220px;
+  width: calc(100% - 220px);
+  min-height: 100vh;
+  transition: all 0.3s ease;
+}
+
+.sidebar.collapsed ~ .content {
+  margin-left: 60px;
+  width: calc(100% - 60px);
+}
+
+/* ==========================
+   CABEÇALHO
+========================== */
+
+header {
+  background: #3a7a3a;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  border-bottom: 3px solid #2e5e2e;
+}
+
+header h1 {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+/* ==========================
+   HERO
+========================== */
+
+.hero {
+  background: linear-gradient(135deg, #3a7a3a, #5bb85b);
+  color: #fff;
+  padding: 50px 20px;
+  text-align: center;
+  border-radius: 0 0 20px 20px;
+  margin-bottom: 30px;
+}
+
+.hero h2 {
+  font-size: 26px;
+  font-weight: 600;
+}
+
+.hero p {
+  font-size: 15px;
+  margin: 10px 0 20px;
+}
+
+.btn-hero {
+  background: #fff;
+  color: #3a7a3a;
+  padding: 10px 22px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-hero:hover {
+  background: #e8e8e8;
+}
+
+/* ==========================
+   LAYOUT GERAL
+========================== */
+
+main {
+  max-width: 1100px;
+  margin: 20px auto;
+  padding: 10px;
+}
+
+/* ==========================
+   FEATURES
+========================== */
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.feature-box {
+  background: #ffffff;
+  border: 1px solid #dce5dc;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.feature-box:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.10);
+}
+
+.feature-box .icon {
+  font-size: 26px;
+  margin-bottom: 8px;
+}
+
+.feature-box h3 {
+  color: #3a7a3a;
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+.feature-box p {
+  font-size: 14px;
+  color: #444;
+  line-height: 1.5;
+}
+
+/* ==========================
+   CARDS
+========================== */
+
+.card {
+  background: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.card h2 {
+  margin-bottom: 10px;
+  color: #3a7a3a;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+/* ==========================
+   TÍTULOS DAS RENDAS
+========================== */
+
+.titulo-renda {
+  font-size: 16px;
+  font-weight: 600;
+  color: #3a7a3a;
+  margin-top: 20px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.titulo-renda .icone {
+  margin-right: 8px;
+  font-size: 18px;
+}
+
+/* ==========================
+   FORMULÁRIO
+========================== */
+
+form label {
+  font-weight: 500;
+  margin-bottom: 4px;
+  display: block;
+  font-size: 14px;
+}
+
+form input,
+form select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #c8d6c8;
+  border-radius: 6px;
+  font-size: 14px;
+  background: #f9fdf9;
+}
+
+/* ==========================
+   GRID
+========================== */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+}
+
+/* ==========================
+   BOTÃO PADRÃO
+========================== */
+
+.btn {
+  background: #3a7a3a;
+  color: #fff;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  margin-top: 15px;
+  width: 100%;
+  font-weight: 600;
+}
+
+.btn:hover {
+  background: #2e5e2e;
+}
+
+/* ==========================
+   RESULTADO
+========================== */
+
+.resultado-card div {
+  background: #f0f5f0;
+  padding: 15px;
+  border-radius: 8px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.resultado-card div strong {
+  color: #3a7a3a;
+}
+
+/* ==========================
+   GRÁFICO
+========================== */
+
+.grafico-card {
+  text-align: center;
+}
+
+.grafico-container {
+  width: 260px;
+  margin: 0 auto;
+}
+
+#graficoPizza {
+  max-width: 260px;
+  max-height: 260px;
+}
+
+/* ==========================
+   RODAPÉ
+========================== */
+
+footer {
+  text-align: center;
+  padding: 15px;
+  color: #666;
+  margin-top: 30px;
+  font-size: 13px;
+}
+/* ==========================================
+   CREDIA - RESULTADOS EM CARDS
+========================================== */
+
+.resultado-credia-container {
+  width: 100%;
+}
+
+.resultado-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(180px, 1fr));
+  gap: 10px;
+}
+
+/* CARD */
+
+.card-produto {
+  background: #ffffff;
+  border: 1px solid #dce5dc;
+  border-radius: 8px;
+
+  padding: 8px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 0;
+
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+
+  transition: all 0.2s ease;
+}
+
+.card-produto:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.10);
+}
+
+/* CAMPOS */
+
+.campo-produto {
+  margin: 0;
+  padding: 0;
+}
+
+.titulo-campo {
+  display: block;
+
+  font-size: 9px;
+
+  font-weight: 600;
+
+  text-transform: uppercase;
+
+  color: #888;
+
+  margin: 0;
+  padding: 0;
+}
+
+.valor-campo {
+  display: block;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  line-height: 1;
+
+  color: #2e5e2e;
+
+  margin: 0 0 3px 0;
+  padding: 0;
+}
+
+/* BOTÃO SIMULAR */
+
+.btn-simular {
+  margin-top: 4px;
+
+  width: 100%;
+
+  border: none;
+  border-radius: 6px;
+
+  background: #3a7a3a;
+
+  color: white;
+
+  padding: 6px;
+
+  cursor: pointer;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  transition: 0.2s;
+}
+
+.btn-simular:hover {
+  background: #2e5e2e;
+}
+
+/* ALERTAS */
+
+.alerta-credia {
+  background: #fff8e1;
+  border: 1px solid #ffd54f;
+  border-radius: 8px;
+  padding: 12px;
+}
+
+/* PLACEHOLDER */
+
+.placeholder-credia {
+  background: #f0f5f0;
+  border-radius: 8px;
+  padding: 12px;
+}
+
+/* RESPONSIVO */
+
+@media (max-width: 1200px) {
+
+  .resultado-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+}
+
+@media (max-width: 900px) {
+
+  .resultado-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .resultado-grid {
+    grid-template-columns: 1fr;
+  }
+
+}

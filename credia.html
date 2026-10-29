@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CredIA Rural</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- MENU LATERAL -->
+  <aside class="sidebar">
+
+    <button class="toggle-menu" onclick="toggleMenu()">
+      ☰
+    </button>
+
+    <nav>
+
+      <a href="index.html">
+        <span class="menu-icon">🏠</span>
+        <span class="menu-text">Início</span>
+      </a>
+
+      <a href="enquadramento.html">
+        <span class="menu-icon">🌾</span>
+        <span class="menu-text">Enquadramento</span>
+      </a>
+
+      <a href="credia.html">
+        <span class="menu-icon">🤖</span>
+        <span class="menu-text">CredIA Rural</span>
+      </a>
+
+    </nav>
+
+  </aside>
+
+  <!-- CONTEÚDO -->
+  <div class="content">
+
+    <header>
+      <h1>🤖 CredIA Rural</h1>
+    </header>
+
+    <main>
+
+      <section class="card">
+
+        <h2>Assistente Inteligente de Crédito Rural</h2>
+
+        <p style="margin-bottom:20px;">
+          Descreva a necessidade do produtor rural e receba sugestões
+          de linhas de crédito compatíveis.
+        </p>
+
+        <div class="grupo">
+
+          <label>Necessidade do Produtor:</label>
+
+          <textarea
+            id="descricaoOperacao"
+            rows="6"
+            placeholder="Exemplo: Produtor deseja custeio para plantio de soja."
+            style="width:100%; padding:10px; border:1px solid #c8d6c8; border-radius:8px;"
+          ></textarea>
+
+        </div>
+
+        <br>
+
+        <div class="grid">
+
+          <div>
+
+            <label>Porte:</label>
+
+            <select id="porte">
+              <option>Pronaf</option>
+              <option>Pronamp</option>
+              <option>Demais Produtores</option>
+            </select>
+
+          </div>
+
+          <div>
+
+            <label>Valor Pretendido (R$):</label>
+
+            <input
+              id="valorPretendido"
+              class="moeda-credia"
+              type="text"
+              placeholder="100.000,00"
+            >
+
+          </div>
+
+        </div>
+
+        <button
+          class="btn"
+          onclick="analisarOperacao()"
+        >
+          🔍 Analisar Operação
+        </button>
+
+      </section>
+
+      <!-- RESULTADOS -->
+
+      <section class="card resultado-card">
+
+        <h2>📋 Resultado da Análise</h2>
+
+        <div
+          id="resultadoCredIA"
+          class="resultado-credia-container"
+        >
+
+          <div class="placeholder-credia">
+
+            Informe os dados da operação e clique em
+            <strong>Analisar Operação</strong>.
+
+          </div>
+
+        </div>
+
+      </section>
+
+    </main>
+
+    <footer>
+      <p>© 2026 — Descomplica o CRU</p>
+    </footer>
+
+  </div>
+
+  <script src="menu.js"></script>
+  <script src="credia-base.js"></script>
+  <script src="credia.js"></script>
+
+</body>
+</html>
