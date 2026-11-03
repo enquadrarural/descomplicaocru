@@ -1,10 +1,14 @@
 const baseCredIA = [
 
     /* ==========================
-       INVESTIMENTO
+       INVESTIMENTO AGRÍCOLA
     ========================== */
 
     {
+        finalidade: 'Investimento',
+
+        atividade: 'Agricola',
+
         palavras: [
             'trator',
             'colheitadeira',
@@ -25,6 +29,10 @@ const baseCredIA = [
     },
 
     {
+        finalidade: 'Investimento',
+
+        atividade: 'Agricola',
+
         palavras: [
             'energia solar',
             'fotovoltaica',
@@ -43,26 +51,10 @@ const baseCredIA = [
     },
 
     {
-        palavras: [
-            'compost barn',
-            'ordenha',
-            'curral',
-            'galpao',
-            'galpão'
-        ],
+        finalidade: 'Investimento',
 
-        linha: 'Investimento',
+        atividade: 'Agricola',
 
-        programa: 'Pronaf Mais Alimentos',
-
-        item: 'Infraestrutura Pecuária',
-
-        taxa: 'A definir',
-
-        prazo: 'Até 10 anos'
-    },
-
-    {
         palavras: [
             'irrigação',
             'irrigacao',
@@ -82,6 +74,10 @@ const baseCredIA = [
     },
 
     {
+        finalidade: 'Investimento',
+
+        atividade: 'Agricola',
+
         palavras: [
             'armazenagem',
             'silo',
@@ -101,11 +97,42 @@ const baseCredIA = [
     },
 
     /* ==========================
-       EXEMPLOS PARA TESTE
-       (MÚLTIPLOS RESULTADOS)
+       INVESTIMENTO PECUÁRIO
     ========================== */
 
     {
+        finalidade: 'Investimento',
+
+        atividade: 'Pecuaria',
+
+        palavras: [
+            'compost barn',
+            'ordenha',
+            'curral',
+            'galpao',
+            'galpão'
+        ],
+
+        linha: 'Investimento',
+
+        programa: 'Pronaf Mais Alimentos',
+
+        item: 'Infraestrutura Pecuária',
+
+        taxa: 'A definir',
+
+        prazo: 'Até 10 anos'
+    },
+
+    /* ==========================
+       CUSTEIO AGRÍCOLA
+    ========================== */
+
+    {
+        finalidade: 'Custeio',
+
+        atividade: 'Agricola',
+
         palavras: [
             'soja',
             'plantio soja',
@@ -120,10 +147,14 @@ const baseCredIA = [
 
         taxa: '7,50% a.a.',
 
-        prazo: '12 meses'
+        prazo: '11 meses'
     },
 
     {
+        finalidade: 'Custeio',
+
+        atividade: 'Agricola',
+
         palavras: [
             'soja',
             'plantio soja',
@@ -142,6 +173,10 @@ const baseCredIA = [
     },
 
     {
+        finalidade: 'Custeio',
+
+        atividade: 'Agricola',
+
         palavras: [
             'soja',
             'plantio soja',
@@ -160,6 +195,10 @@ const baseCredIA = [
     },
 
     {
+        finalidade: 'Custeio',
+
+        atividade: 'Agricola',
+
         palavras: [
             'milho',
             'plantio milho',
@@ -173,6 +212,50 @@ const baseCredIA = [
         item: 'Milho',
 
         taxa: '7,50% a.a.',
+
+        prazo: '12 meses'
+    },
+
+    {
+        finalidade: 'Custeio',
+
+        atividade: 'Agricola',
+
+        palavras: [
+            'milho',
+            'plantio milho',
+            'lavoura milho'
+        ],
+
+        linha: 'Custeio Agrícola',
+
+        programa: 'Pronamp Custeio',
+
+        item: 'Milho',
+
+        taxa: '8,00% a.a.',
+
+        prazo: '12 meses'
+    },
+
+    {
+        finalidade: 'Custeio',
+
+        atividade: 'Agricola',
+
+        palavras: [
+            'milho',
+            'plantio milho',
+            'lavoura milho'
+        ],
+
+        linha: 'Custeio Agrícola',
+
+        programa: 'Demais Produtores',
+
+        item: 'Milho',
+
+        taxa: 'Taxa da Instituição',
 
         prazo: '12 meses'
     }

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Login - Descomplica o CRU</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="style.css">
+
+</head>
+
+<body>
+
+    <div class="login-container">
+
+        <div class="login-card">
+
+            <h1>🚜 Descomplica o CRU</h1>
+
+            <p>
+                Acesse sua conta
+            </p>
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Seu e-mail">
+
+            <input
+                type="password"
+                id="senha"
+                placeholder="Sua senha">
+
+            <button
+                class="btn"
+                onclick="loginEmail()">
+
+                Entrar
+
+            </button>
+
+            <button
+                class="btn"
+                onclick="criarConta()">
+
+                Criar Conta
+
+            </button>
+
+            <button
+                class="btn"
+                onclick="loginGoogle()">
+
+                Entrar com Google
+
+            </button>
+
+            <button
+                class="btn"
+                onclick="recuperarSenha()">
+
+                Esqueci minha senha
+
+            </button>
+
+            <div id="mensagem"></div>
+
+        </div>
+
+    </div>
+
+    <script type="module"
+            src="firebase-config.js"></script>
+
+    <script type="module"
+            src="auth.js"></script>
+
+</body>
+
+</html>

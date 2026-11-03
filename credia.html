@@ -47,89 +47,163 @@
 
     <main>
 
-      <section class="card">
+      <!-- ÁREA BLOQUEADA -->
 
-        <h2>Assistente Inteligente de Crédito Rural</h2>
+      <section
+        id="areaRestrita"
+        class="card"
+        style="display:none;"
+      >
 
-        <p style="margin-bottom:20px;">
-          Descreva a necessidade do produtor rural e receba sugestões
-          de linhas de crédito compatíveis.
+        <h2>🔒 Área Restrita</h2>
+
+        <p style="margin-bottom:15px;">
+
+          O módulo CredIA Rural está disponível somente
+          para usuários cadastrados.
+
         </p>
 
-        <div class="grupo">
+        <p style="margin-bottom:20px;">
 
-          <label>Necessidade do Produtor:</label>
+          Faça login para acessar o assistente de crédito
+          rural e as funcionalidades avançadas da plataforma.
 
-          <textarea
-            id="descricaoOperacao"
-            rows="6"
-            placeholder="Exemplo: Produtor deseja custeio para plantio de soja."
-            style="width:100%; padding:10px; border:1px solid #c8d6c8; border-radius:8px;"
-          ></textarea>
-
-        </div>
-
-        <br>
-
-        <div class="grid">
-
-          <div>
-
-            <label>Porte:</label>
-
-            <select id="porte">
-              <option>Pronaf</option>
-              <option>Pronamp</option>
-              <option>Demais Produtores</option>
-            </select>
-
-          </div>
-
-          <div>
-
-            <label>Valor Pretendido (R$):</label>
-
-            <input
-              id="valorPretendido"
-              class="moeda-credia"
-              type="text"
-              placeholder="100.000,00"
-            >
-
-          </div>
-
-        </div>
+        </p>
 
         <button
           class="btn"
-          onclick="analisarOperacao()"
+          onclick="window.location.href='login.html'"
         >
-          🔍 Analisar Operação
+          👤 Entrar
         </button>
 
       </section>
 
-      <!-- RESULTADOS -->
+      <!-- CONTEÚDO PROTEGIDO -->
 
-      <section class="card resultado-card">
+      <div
+        id="conteudoProtegido"
+        style="display:none;"
+      >
 
-        <h2>📋 Resultado da Análise</h2>
+        <section class="card">
 
-        <div
-          id="resultadoCredIA"
-          class="resultado-credia-container"
-        >
+          <h2>Assistente Inteligente de Crédito Rural</h2>
 
-          <div class="placeholder-credia">
+          <p style="margin-bottom:20px;">
+            Descreva a necessidade do produtor rural e receba sugestões
+            de linhas de crédito compatíveis.
+          </p>
 
-            Informe os dados da operação e clique em
-            <strong>Analisar Operação</strong>.
+          <div class="grupo">
+
+            <label>Necessidade do Produtor:</label>
+
+            <textarea
+              id="descricaoOperacao"
+              rows="6"
+              placeholder="Exemplo: Produtor deseja custeio para plantio de soja."
+              style="width:100%; padding:10px; border:1px solid #c8d6c8; border-radius:8px;"
+            ></textarea>
 
           </div>
 
-        </div>
+          <br>
 
-      </section>
+          <div class="grid">
+
+            <div>
+
+              <label>Finalidade:</label>
+
+              <select id="finalidade">
+                <option value="">Selecione</option>
+                <option value="Custeio">Custeio</option>
+                <option value="Investimento">Investimento</option>
+                <option value="Comercializacao">Comercialização</option>
+                <option value="Industrializacao">Industrialização</option>
+              </select>
+
+            </div>
+
+            <div>
+
+              <label>Atividade:</label>
+
+              <select id="atividade">
+                <option value="">Selecione</option>
+                <option value="Agricola">Agrícola</option>
+                <option value="Pecuaria">Pecuária</option>
+              </select>
+
+            </div>
+
+          </div>
+
+          <br>
+
+          <div class="grid">
+
+            <div>
+
+              <label>Porte:</label>
+
+              <select id="porte">
+                <option>Pronaf</option>
+                <option>Pronamp</option>
+                <option>Demais Produtores</option>
+              </select>
+
+            </div>
+
+            <div>
+
+              <label>Valor Pretendido (R$):</label>
+
+              <input
+                id="valorPretendido"
+                class="moeda-credia"
+                type="text"
+                placeholder="100.000,00"
+              >
+
+            </div>
+
+          </div>
+
+          <button
+            class="btn"
+            onclick="analisarOperacao()"
+          >
+            🔍 Analisar Operação
+          </button>
+
+        </section>
+
+        <!-- RESULTADOS -->
+
+        <section class="card resultado-card">
+
+          <h2>📋 Resultado da Análise</h2>
+
+          <div
+            id="resultadoCredIA"
+            class="resultado-credia-container"
+          >
+
+            <div class="placeholder-credia">
+
+              Informe os dados da operação e clique em
+              <strong>Analisar Operação</strong>.
+
+            </div>
+
+          </div>
+
+        </section>
+
+      </div>
 
     </main>
 
@@ -139,9 +213,36 @@
 
   </div>
 
+  <!-- MODAL DE SIMULAÇÃO -->
+
+  <div
+    id="modalSimulacao"
+    class="modal-simulacao"
+  >
+
+    <div class="modal-simulacao-conteudo">
+
+      <button
+        class="fechar-modal"
+        onclick="fecharSimulacao()"
+      >
+        ✕
+      </button>
+
+      <h2>📊 Simulação da Operação</h2>
+
+      <div id="conteudoSimulacao"></div>
+
+    </div>
+
+  </div>
+
   <script src="menu.js"></script>
   <script src="credia-base.js"></script>
   <script src="credia.js"></script>
+
+  <script type="module" src="firebase-config.js"></script>
+  <script type="module" src="controle-acesso.js"></script>
 
 </body>
 </html>

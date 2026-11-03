@@ -24,14 +24,24 @@
         <span class="menu-text">Início</span>
       </a>
 
-      <a href="enquadramento.html">
+      <a
+        href="#"
+        id="menuEnquadramento"
+      >
         <span class="menu-icon">🌾</span>
-        <span class="menu-text">Enquadramento</span>
+        <span class="menu-text">
+          Enquadramento
+        </span>
       </a>
 
-      <a href="credia.html">
+      <a
+        href="#"
+        id="menuCredIA"
+      >
         <span class="menu-icon">🤖</span>
-        <span class="menu-text">CredIA Rural</span>
+        <span class="menu-text">
+          CredIA Rural
+        </span>
       </a>
 
     </nav>
@@ -42,7 +52,28 @@
   <div class="content">
 
     <header>
-      <h1>Descomplica o Crédito Rural</h1>
+
+      <div class="topo-sistema">
+
+        <h1>Descomplica o Crédito Rural</h1>
+
+        <div
+          id="areaUsuario"
+          class="area-usuario"
+        >
+
+          <button
+            id="btnLogin"
+            class="btn-login"
+            onclick="window.location.href='login.html'"
+          >
+            👤 Entrar
+          </button>
+
+        </div>
+
+      </div>
+
     </header>
 
     <section class="hero">
@@ -54,7 +85,11 @@
         e operações de crédito.
       </p>
 
-      <a href="enquadramento.html" class="btn-hero">
+      <a
+        href="#"
+        id="btnHeroEnquadramento"
+        class="btn-hero"
+      >
         Iniciar Enquadramento
       </a>
 
@@ -65,6 +100,7 @@
       <section class="features">
 
         <div class="feature-box">
+
           <div class="icon">🚜</div>
 
           <h3>Classificação do Produtor</h3>
@@ -73,9 +109,11 @@
             Identifique se o produtor é pequeno, médio ou grande
             com base no Manual de Crédito Rural.
           </p>
+
         </div>
 
         <div class="feature-box">
+
           <div class="icon">🤖</div>
 
           <h3>CredIA Rural</h3>
@@ -85,9 +123,11 @@
             sugestões de linhas de crédito compatíveis,
             finalidades, prazos e orientações técnicas.
           </p>
+
         </div>
 
         <div class="feature-box">
+
           <div class="icon">🗺️</div>
 
           <h3>Mapa Ambiental do Agro — Em Breve</h3>
@@ -96,6 +136,7 @@
             Visualize propriedades rurais, glebas e informações
             ambientais para análise de crédito.
           </p>
+
         </div>
 
       </section>
@@ -109,6 +150,14 @@
   </div>
 
   <script src="menu.js"></script>
+
+  <script type="module"
+          src="firebase-config.js">
+  </script>
+
+  <script type="module"
+          src="controle-acesso.js">
+  </script>
 
 </body>
 </html>
