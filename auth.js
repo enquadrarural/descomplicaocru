@@ -6,8 +6,6 @@ from "./firebase-config.js";
 
 import {
 
-    createUserWithEmailAndPassword,
-
     signInWithEmailAndPassword,
 
     sendPasswordResetEmail,
@@ -52,68 +50,6 @@ function mostrarMensagem(texto) {
 }
 
 /* ==========================
-   CRIAR CONTA
-========================== */
-
-window.criarConta =
-async function () {
-
-    const email =
-        document
-            .getElementById("email")
-            .value;
-
-    const senha =
-        document
-            .getElementById("senha")
-            .value;
-
-    try {
-
-        const cred =
-            await createUserWithEmailAndPassword(
-                auth,
-                email,
-                senha
-            );
-
-        await setDoc(
-            doc(
-                db,
-                "usuarios",
-                cred.user.uid
-            ),
-            {
-
-                email,
-
-                plano: "teste",
-
-                status: "ativo",
-
-                criadoEm:
-                    new Date()
-
-            }
-        );
-
-        mostrarMensagem(
-            "✅ Conta criada com sucesso."
-        );
-
-    }
-
-    catch (erro) {
-
-        mostrarMensagem(
-            erro.message
-        );
-
-    }
-
-};
-
-/* ==========================
    LOGIN EMAIL
 ========================== */
 
@@ -145,8 +81,31 @@ async function () {
 
     catch (erro) {
 
+        let mensagem =
+            erro.message;
+
+        if (
+            erro.code ===
+            "auth/invalid-credential"
+        ) {
+
+            mensagem =
+                "E-mail ou senha inválidos.";
+
+        }
+
+        if (
+            erro.code ===
+            "auth/user-not-found"
+        ) {
+
+            mensagem =
+                "Usuário não encontrado.";
+
+        }
+
         mostrarMensagem(
-            erro.message
+            mensagem
         );
 
     }
@@ -192,14 +151,20 @@ async function () {
                 usuarioRef,
                 {
 
+                    nome:
+                        resultado.user.displayName,
+
                     email:
                         resultado.user.email,
 
                     plano:
-                        "teste",
+                        "trial",
 
                     status:
                         "ativo",
+
+                    diasTrial:
+                        7,
 
                     criadoEm:
                         new Date()
