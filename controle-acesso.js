@@ -1,4 +1,7 @@
-import { auth }
+import {
+    auth,
+    db
+}
 from "./firebase-config.js";
 
 import {
@@ -6,6 +9,12 @@ import {
     signOut
 }
 from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+import {
+    doc,
+    getDoc
+}
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
 /* ==========================================
    ELEMENTOS
@@ -68,7 +77,7 @@ async function () {
 };
 
 /* ==========================================
-   USUÁRIO NÃO LOGADO
+   VISITANTE
 ========================================== */
 
 function configurarVisitante() {
@@ -159,9 +168,56 @@ function configurarVisitante() {
    USUÁRIO LOGADO
 ========================================== */
 
-function configurarUsuario(
+async function configurarUsuario(
     user
 ) {
+
+    let nomeUsuario =
+        user.email;
+
+    try {
+
+        const usuarioRef =
+            doc(
+                db,
+                "usuarios",
+                user.uid
+            );
+
+        const usuarioSnap =
+            await getDoc(
+                usuarioRef
+            );
+
+        if (
+            usuarioSnap.exists()
+        ) {
+
+            const dados =
+                usuarioSnap.data();
+
+            if (
+                dados.nome &&
+                dados.nome.trim() !== ""
+            ) {
+
+                nomeUsuario =
+                    dados.nome;
+
+            }
+
+        }
+
+    }
+
+    catch (erro) {
+
+        console.error(
+            "Erro ao buscar usuário:",
+            erro
+        );
+
+    }
 
     if (areaUsuario) {
 
@@ -170,8 +226,7 @@ function configurarUsuario(
             <div class="usuario-logado">
 
                 <span>
-                    👤
-                    ${user.email}
+                    👤 ${nomeUsuario}
                 </span>
 
                 <button
@@ -240,11 +295,11 @@ onAuthStateChanged(
 
     auth,
 
-    (user) => {
+    async (user) => {
 
         if (user) {
 
-            configurarUsuario(
+            await configurarUsuario(
                 user
             );
 
