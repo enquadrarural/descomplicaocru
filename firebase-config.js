@@ -9,20 +9,19 @@ from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
 const firebaseConfig = {
 
-    apiKey: "SUA_API_KEY",
+    apiKey: "AIzaSyDQJwdRN_3lxM7bs6YVRiTnMDUGLHMojo0",
 
-    authDomain: "SEU_PROJETO.firebaseapp.com",
+    authDomain: "descomplicaocru.firebaseapp.com",
 
-    projectId: "SEU_PROJETO",
+    projectId: "descomplicaocru",
 
-    storageBucket:
-        "SEU_PROJETO.appspot.com",
+    storageBucket: "descomplicaocru.firebasestorage.app",
 
-    messagingSenderId:
-        "123456789",
+    messagingSenderId: "882021182112",
 
-    appId:
-        "1:123456789:web:abc123"
+    appId: "1:882021182112:web:23878d82512344bb8b37c5",
+
+    measurementId: "G-GRD4E443WX"
 
 };
 
