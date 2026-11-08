@@ -181,52 +181,79 @@ async function () {
            SALVAR FIRESTORE
         ========================== */
 
-        await setDoc(
-            doc(
-                db,
-                "usuarios",
-                usuario.uid
-            ),
-            {
+/* ==========================
+   TRIAL AUTOMÁTICO
+========================== */
 
-                uid:
-                    usuario.uid,
+const agora =
+    new Date();
 
-                nome:
-                    nome,
+const trialFim =
+    new Date();
 
-                cpf:
-                    cpf,
+trialFim.setDate(
+    trialFim.getDate() + 7
+);
 
-                telefone:
-                    telefone,
+/* ==========================
+   SALVAR FIRESTORE
+========================== */
 
-                cidade:
-                    cidade,
+await setDoc(
+    doc(
+        db,
+        "usuarios",
+        usuario.uid
+    ),
+    {
 
-                estado:
-                    estado,
+        uid:
+            usuario.uid,
 
-                email:
-                    email,
+        perfil:
+            "usuario",
 
-                plano:
-                    "trial",
+        nome:
+            nome,
 
-                status:
-                    "ativo",
+        cpf:
+            cpf,
 
-                diasTrial:
-                    7,
+        telefone:
+            telefone,
 
-                criadoEm:
-                    serverTimestamp(),
+        cidade:
+            cidade,
 
-                ultimoLogin:
-                    null
+        estado:
+            estado,
 
-            }
-        );
+        email:
+            email,
+
+        plano:
+            "trial",
+
+        status:
+            "ativo",
+
+        trialDias:
+            7,
+
+        trialInicio:
+            agora,
+
+        trialFim:
+            trialFim,
+
+        criadoEm:
+            serverTimestamp(),
+
+        ultimoLogin:
+            null
+
+    }
+);
 
         mostrarMensagem(
             "✅ Conta criada com sucesso!",
