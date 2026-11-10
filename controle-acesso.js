@@ -68,9 +68,7 @@ async function () {
 
     catch (erro) {
 
-        console.error(
-            erro
-        );
+        console.error(erro);
 
     }
 
@@ -175,6 +173,18 @@ async function configurarUsuario(
     let nomeUsuario =
         user.email;
 
+    let informacaoPlano =
+        "";
+
+    let perfil =
+        "usuario";
+
+    let status =
+        "ativo";
+
+    let trialExpirado =
+        false;
+
     try {
 
         const usuarioRef =
@@ -196,6 +206,12 @@ async function configurarUsuario(
             const dados =
                 usuarioSnap.data();
 
+            perfil =
+                dados.perfil || "usuario";
+
+            status =
+                dados.status || "ativo";
+
             if (
                 dados.nome &&
                 dados.nome.trim() !== ""
@@ -203,6 +219,78 @@ async function configurarUsuario(
 
                 nomeUsuario =
                     dados.nome;
+
+            }
+
+            /* ==========================
+               MASTER
+            ========================== */
+
+            if (
+                perfil === "master"
+            ) {
+
+                informacaoPlano =
+                    "⭐ Master";
+
+            }
+
+            /* ==========================
+               TRIAL
+            ========================== */
+
+            else if (
+                dados.trialFim
+            ) {
+
+                const hoje =
+                    new Date();
+
+                const dataFim =
+                    dados.trialFim.toDate();
+
+                const diasRestantes =
+                    Math.max(
+                        0,
+                        Math.ceil(
+                            (
+                                dataFim -
+                                hoje
+                            ) /
+                            (
+                                1000 *
+                                60 *
+                                60 *
+                                24
+                            )
+                        )
+                    );
+
+                if (
+                    diasRestantes <= 0
+                ) {
+
+                    trialExpirado =
+                        true;
+
+                    informacaoPlano =
+                        "⚠ Trial Expirado";
+
+                }
+
+                else {
+
+                    informacaoPlano =
+                        `🕒 Trial: ${diasRestantes} dias restantes`;
+
+                }
+
+            }
+
+            else {
+
+                informacaoPlano =
+                    "✅ Usuário Ativo";
 
             }
 
@@ -219,15 +307,32 @@ async function configurarUsuario(
 
     }
 
+    /* ==========================
+       TOPO
+    ========================== */
+
     if (areaUsuario) {
 
         areaUsuario.innerHTML = `
 
             <div class="usuario-logado">
 
-                <span>
-                    👤 ${nomeUsuario}
-                </span>
+                <div>
+
+                    <div>
+                        👤 ${nomeUsuario}
+                    </div>
+
+                    <div
+                        style="
+                            font-size:12px;
+                            opacity:.85;
+                        "
+                    >
+                        ${informacaoPlano}
+                    </div>
+
+                </div>
 
                 <button
                     class="btn-sair"
@@ -241,6 +346,71 @@ async function configurarUsuario(
         `;
 
     }
+
+    /* ==========================
+       VERIFICAR MÓDULO PROTEGIDO
+    ========================== */
+
+    const moduloAtual =
+        document.body.dataset.modulo;
+
+    const bloquearModulo =
+        perfil !== "master" &&
+        moduloAtual &&
+        (
+            trialExpirado ||
+            status !== "ativo"
+        );
+
+    if (
+        bloquearModulo
+    ) {
+
+        if (areaRestrita) {
+
+            areaRestrita.style.display =
+                "block";
+
+            areaRestrita.innerHTML = `
+
+                <h2>
+                    🔒 Acesso Bloqueado
+                </h2>
+
+                <p style="margin-top:15px;">
+
+                    Seu período de avaliação
+                    expirou.
+
+                </p>
+
+                <p style="margin-top:10px;">
+
+                    Entre em contato para
+                    ativar uma assinatura
+                    e continuar utilizando
+                    o sistema.
+
+                </p>
+
+            `;
+
+        }
+
+        if (conteudoProtegido) {
+
+            conteudoProtegido.style.display =
+                "none";
+
+        }
+
+        return;
+
+    }
+
+    /* ==========================
+       LIBERAR MÓDULOS
+    ========================== */
 
     if (menuEnquadramento) {
 
