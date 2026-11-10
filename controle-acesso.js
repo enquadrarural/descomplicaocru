@@ -35,6 +35,11 @@ const menuCredIA =
         "menuCredIA"
     );
 
+const menuAdmin =
+    document.getElementById(
+        "menuAdmin"
+    );
+
 const btnHeroEnquadramento =
     document.getElementById(
         "btnHeroEnquadramento"
@@ -68,7 +73,9 @@ async function () {
 
     catch (erro) {
 
-        console.error(erro);
+        console.error(
+            erro
+        );
 
     }
 
@@ -93,6 +100,13 @@ function configurarVisitante() {
             </button>
 
         `;
+
+    }
+
+    if (menuAdmin) {
+
+        menuAdmin.style.display =
+            "none";
 
     }
 
@@ -212,6 +226,13 @@ async function configurarUsuario(
             status =
                 dados.status || "ativo";
 
+            if (menuAdmin) {
+
+                menuAdmin.style.display =
+                    "none";
+
+            }
+
             if (
                 dados.nome &&
                 dados.nome.trim() !== ""
@@ -232,6 +253,13 @@ async function configurarUsuario(
 
                 informacaoPlano =
                     "⭐ Master";
+
+                if (menuAdmin) {
+
+                    menuAdmin.style.display =
+                        "flex";
+
+                }
 
             }
 
@@ -256,7 +284,8 @@ async function configurarUsuario(
                             (
                                 dataFim -
                                 hoje
-                            ) /
+                            )
+                            /
                             (
                                 1000 *
                                 60 *

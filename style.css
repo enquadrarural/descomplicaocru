@@ -868,3 +868,19 @@ footer {
 
 }
 
+#tabelaUsuarios th,
+#tabelaUsuarios td {
+
+    border: 1px solid #dce5dc;
+
+    padding: 10px;
+
+    text-align: left;
+
+}
+
+#tabelaUsuarios th {
+
+    background: #f3f7f2;
+
+}

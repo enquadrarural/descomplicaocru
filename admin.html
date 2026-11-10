@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Administração - Descomplica o CRU</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="style.css">
+
+</head>
+
+<body data-modulo="admin">
+
+    <!-- MENU -->
+
+    <aside class="sidebar">
+
+        <button
+            class="toggle-menu"
+            onclick="toggleMenu()">
+
+            ☰
+
+        </button>
+
+        <nav>
+
+            <a href="index.html">
+
+                <span class="menu-icon">🏠</span>
+
+                <span class="menu-text">
+                    Início
+                </span>
+
+            </a>
+
+            <a href="enquadramento.html">
+
+                <span class="menu-icon">🌾</span>
+
+                <span class="menu-text">
+                    Enquadramento
+                </span>
+
+            </a>
+
+            <a href="credia.html">
+
+                <span class="menu-icon">🤖</span>
+
+                <span class="menu-text">
+                    CredIA Rural
+                </span>
+
+            </a>
+
+            <a href="admin.html">
+
+                <span class="menu-icon">⚙️</span>
+
+                <span class="menu-text">
+                    Administração
+                </span>
+
+            </a>
+
+        </nav>
+
+    </aside>
+
+    <!-- CONTEÚDO -->
+
+    <div class="content">
+
+        <header>
+
+            <div class="topo-sistema">
+
+                <h1>
+                    ⚙️ Administração
+                </h1>
+
+                <div
+                    id="areaUsuario"
+                    class="area-usuario">
+                </div>
+
+            </div>
+
+        </header>
+
+        <main>
+
+            <section class="card">
+
+                <h2>
+                    Usuários Cadastrados
+                </h2>
+
+                <p
+                    style="
+                    margin-bottom:20px;
+                ">
+
+                    Gerencie os usuários da plataforma.
+
+                </p>
+
+                <div
+                    style="
+                    overflow-x:auto;
+                ">
+
+                    <table
+                        id="tabelaUsuarios"
+                        style="
+                        width:100%;
+                        border-collapse:collapse;
+                    ">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>Nome</th>
+
+                                <th>Email</th>
+
+                                <th>Perfil</th>
+
+                                <th>Plano</th>
+
+                                <th>Status</th>
+
+                                <th>Trial</th>
+
+                                <th>Ações</th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="listaUsuarios">
+
+                            <tr>
+
+                                <td colspan="7"
+                                    style="
+                                    text-align:center;
+                                    padding:20px;
+                                ">
+
+                                    Carregando usuários...
+
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+        </main>
+
+        <footer>
+
+            <p>
+                © 2026 — Descomplica o CRU
+            </p>
+
+        </footer>
+
+    </div>
+
+    <script src="menu.js"></script>
+
+    <script type="module"
+            src="firebase-config.js">
+    </script>
+
+    <script type="module"
+            src="controle-acesso.js">
+    </script>
+
+    <script type="module"
+            src="admin.js">
+    </script>
+
+</body>
+
+</html>
