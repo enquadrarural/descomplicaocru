@@ -110,9 +110,7 @@ async function (
 
     catch (erro) {
 
-        console.error(
-            erro
-        );
+        console.error(erro);
 
         alert(
             "Erro ao atualizar status."
@@ -151,9 +149,7 @@ async function (
 
     catch (erro) {
 
-        console.error(
-            erro
-        );
+        console.error(erro);
 
         alert(
             "Erro ao atualizar plano."
@@ -192,9 +188,7 @@ async function (
 
     catch (erro) {
 
-        console.error(
-            erro
-        );
+        console.error(erro);
 
         alert(
             "Erro ao atualizar perfil."
@@ -210,8 +204,7 @@ async function (
 
 async function carregarUsuarios() {
 
-    listaUsuarios.innerHTML =
-        "";
+    listaUsuarios.innerHTML = "";
 
     const snapshot =
         await getDocs(
@@ -268,96 +261,69 @@ async function carregarUsuarios() {
 
                 <td>
 
-                    <button
-                        class="btn"
-                        style="
-                            margin:2px;
-                            width:auto;
-                            padding:6px 10px;
-                        "
-                        onclick="alterarStatus(
-                            '${documento.id}',
-                            'ativo'
-                        )"
-                    >
-                        ✅ Ativar
-                    </button>
+                    <div class="acoes-admin">
 
-                    <button
-                        class="btn"
-                        style="
-                            margin:2px;
-                            width:auto;
-                            padding:6px 10px;
-                            background:#c0392b;
-                        "
-                        onclick="alterarStatus(
-                            '${documento.id}',
-                            'inativo'
-                        )"
-                    >
-                        ⛔ Bloquear
-                    </button>
+                        <button
+                            class="btn"
+                            onclick="alterarStatus(
+                                '${documento.id}',
+                                'ativo'
+                            )"
+                        >
+                            ✅ Ativar
+                        </button>
 
-                    <button
-                        class="btn"
-                        style="
-                            margin:2px;
-                            width:auto;
-                            padding:6px 10px;
-                        "
-                        onclick="alterarPlano(
-                            '${documento.id}',
-                            'trial'
-                        )"
-                    >
-                        🧪 Trial
-                    </button>
+                        <button
+                            class="btn btn-bloquear"
+                            onclick="alterarStatus(
+                                '${documento.id}',
+                                'inativo'
+                            )"
+                        >
+                            ⛔ Bloquear
+                        </button>
 
-                    <button
-                        class="btn"
-                        style="
-                            margin:2px;
-                            width:auto;
-                            padding:6px 10px;
-                        "
-                        onclick="alterarPlano(
-                            '${documento.id}',
-                            'mensal'
-                        )"
-                    >
-                        💰 Mensal
-                    </button>
+                        <button
+                            class="btn"
+                            onclick="alterarPlano(
+                                '${documento.id}',
+                                'trial'
+                            )"
+                        >
+                            🧪 Trial
+                        </button>
 
-                    <button
-                        class="btn"
-                        style="
-                            margin:2px;
-                            width:auto;
-                            padding:6px 10px;
-                        "
-                        onclick="alterarPlano(
-                            '${documento.id}',
-                            'anual'
-                        )"
-                    >
-                        📅 Anual
-                    </button>
+                        <button
+                            class="btn"
+                            onclick="alterarPlano(
+                                '${documento.id}',
+                                'mensal'
+                            )"
+                        >
+                            💰 Mensal
+                        </button>
 
-                    <button
-                        class="btn"
-                        style="
-                            margin:2px;
-                            width:auto;
-                            padding:6px 10px;
-                        "
-                        onclick="alterarPerfil(
-                            '${documento.id}',
-                            'master'
-                        )"
-                    >
-                        👑 Master
-                    </button>
+                        <button
+                            class="btn"
+                            onclick="alterarPlano(
+                                '${documento.id}',
+                                'anual'
+                            )"
+                        >
+                            📅 Anual
+                        </button>
+
+                        <button
+                            class="btn"
+                            onclick="alterarPerfil(
+                                '${documento.id}',
+                                'master'
+                            )"
+                        >
+                            👑 Master
+                        </button>
+
+                    </div>
 
                 </td>
 
@@ -407,7 +373,9 @@ async function validarMaster(
         usuarioSnap.data();
 
     if (
-        dados.perfil !==
+        (
+            dados.perfil || ""
+        ).toLowerCase() !==
         "master"
     ) {
 

@@ -884,3 +884,64 @@ footer {
     background: #f3f7f2;
 
 }
+
+/* ==========================================
+   ADMIN
+========================================== */
+
+#tabelaUsuarios {
+
+    width: 100%;
+
+    min-width: 1400px;
+
+}
+
+#tabelaUsuarios th,
+#tabelaUsuarios td {
+
+    border: 1px solid #d9e1d9;
+
+    padding: 10px;
+
+    vertical-align: top;
+
+}
+
+#tabelaUsuarios td:nth-child(7) {
+
+    min-width: 180px;
+
+}
+
+#tabelaUsuarios td:nth-child(8) {
+
+    min-width: 360px;
+
+}
+
+.acoes-admin {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 6px;
+
+}
+
+.acoes-admin .btn {
+
+    width: auto;
+
+    margin: 0;
+
+    padding: 6px 10px;
+
+}
+
+.btn-bloquear {
+
+    background: #c0392b !important;
+
+}
