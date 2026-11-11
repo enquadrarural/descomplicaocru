@@ -218,7 +218,22 @@ async function configurarUsuario(
         ) {
 
             const dados =
-                usuarioSnap.data();
+    usuarioSnap.data();
+
+console.log(
+    "Dados Firestore:",
+    dados
+);
+
+console.log(
+    "Perfil Firestore:",
+    dados.perfil
+);
+
+console.log(
+    "Menu Admin:",
+    menuAdmin
+);
 
             perfil =
                 dados.perfil || "usuario";
