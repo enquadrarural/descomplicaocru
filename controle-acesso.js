@@ -244,7 +244,7 @@ console.log(
             if (menuAdmin) {
 
                 menuAdmin.style.display =
-                    "none";
+                    "block";
 
             }
 
