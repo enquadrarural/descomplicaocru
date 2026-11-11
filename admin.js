@@ -206,6 +206,18 @@ async function carregarUsuarios() {
 
     listaUsuarios.innerHTML = "";
 
+    let totalUsuarios = 0;
+
+    let usuariosAtivos = 0;
+
+    let usuariosBloqueados = 0;
+
+    let trialsAtivos = 0;
+
+    let trialsExpirados = 0;
+
+    let usuariosMaster = 0;
+
     const snapshot =
         await getDocs(
             collection(
@@ -219,6 +231,81 @@ async function carregarUsuarios() {
 
             const usuario =
                 documento.data();
+
+            totalUsuarios++;
+
+            if (
+                usuario.status ===
+                "ativo"
+            ) {
+
+                usuariosAtivos++;
+
+            }
+
+            if (
+                usuario.status ===
+                "inativo"
+            ) {
+
+                usuariosBloqueados++;
+
+            }
+
+            if (
+                (
+                    usuario.perfil ||
+                    ""
+                ).toLowerCase() ===
+                "master"
+            ) {
+
+                usuariosMaster++;
+
+            }
+
+            if (
+                (
+                    usuario.plano ||
+                    ""
+                ).toLowerCase() ===
+                "trial"
+            ) {
+
+                if (
+                    usuario.trialFim
+                ) {
+
+                    const hoje =
+                        new Date();
+
+                    const dataFim =
+                        usuario.trialFim.toDate();
+
+                    if (
+                        dataFim >=
+                        hoje
+                    ) {
+
+                        trialsAtivos++;
+
+                    }
+
+                    else {
+
+                        trialsExpirados++;
+
+                    }
+
+                }
+
+                else {
+
+                    trialsAtivos++;
+
+                }
+
+            }
 
             const tr =
                 document.createElement(
@@ -336,6 +423,60 @@ async function carregarUsuarios() {
         }
     );
 
+    const totalUsuariosEl =
+        document.getElementById(
+            "totalUsuarios"
+        );
+
+    const usuariosAtivosEl =
+        document.getElementById(
+            "usuariosAtivos"
+        );
+
+    const usuariosBloqueadosEl =
+        document.getElementById(
+            "usuariosBloqueados"
+        );
+
+    const trialsAtivosEl =
+        document.getElementById(
+            "trialsAtivos"
+        );
+
+    const trialsExpiradosEl =
+        document.getElementById(
+            "trialsExpirados"
+        );
+
+    const usuariosMasterEl =
+        document.getElementById(
+            "usuariosMaster"
+        );
+
+    if (totalUsuariosEl)
+        totalUsuariosEl.textContent =
+            totalUsuarios;
+
+    if (usuariosAtivosEl)
+        usuariosAtivosEl.textContent =
+            usuariosAtivos;
+
+    if (usuariosBloqueadosEl)
+        usuariosBloqueadosEl.textContent =
+            usuariosBloqueados;
+
+    if (trialsAtivosEl)
+        trialsAtivosEl.textContent =
+            trialsAtivos;
+
+    if (trialsExpiradosEl)
+        trialsExpiradosEl.textContent =
+            trialsExpirados;
+
+    if (usuariosMasterEl)
+        usuariosMasterEl.textContent =
+            usuariosMaster;
+
 }
 
 /* ==========================================
@@ -374,7 +515,8 @@ async function validarMaster(
 
     if (
         (
-            dados.perfil || ""
+            dados.perfil ||
+            ""
         ).toLowerCase() !==
         "master"
     ) {

@@ -945,3 +945,88 @@ footer {
     background: #c0392b !important;
 
 }
+
+/* ==========================================
+   DASHBOARD ADMINISTRATIVO
+========================================== */
+
+.dashboard-admin {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(
+                170px,
+                1fr
+            )
+        );
+
+    gap: 15px;
+
+    margin-bottom: 25px;
+
+}
+
+.card-metrica {
+
+    background: #ffffff;
+
+    border-radius: 12px;
+
+    padding: 20px;
+
+    text-align: center;
+
+    border: 1px solid #dce5dc;
+
+    box-shadow:
+        0 2px 6px
+        rgba(
+            0,
+            0,
+            0,
+            0.08
+        );
+
+    transition: 0.2s;
+
+}
+
+.card-metrica:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 4px 10px
+        rgba(
+            0,
+            0,
+            0,
+            0.12
+        );
+
+}
+
+.card-metrica div {
+
+    font-size: 32px;
+
+    font-weight: 700;
+
+    color: #2e5e2e;
+
+    margin-bottom: 8px;
+
+}
+
+.card-metrica span {
+
+    font-size: 14px;
+
+    color: #666;
+
+    font-weight: 500;
+
+}

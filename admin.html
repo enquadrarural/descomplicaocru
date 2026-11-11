@@ -11,10 +11,10 @@
     <title>Administração - Descomplica o CRU</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
-        rel="stylesheet">
+          rel="stylesheet">
 
     <link rel="stylesheet"
-        href="style.css">
+          href="style.css">
 
 </head>
 
@@ -101,6 +101,86 @@
 
         <main>
 
+            <!-- DASHBOARD -->
+
+            <section class="dashboard-admin">
+
+                <div class="card-metrica">
+
+                    <div id="totalUsuarios">
+                        0
+                    </div>
+
+                    <span>
+                        👥 Usuários
+                    </span>
+
+                </div>
+
+                <div class="card-metrica">
+
+                    <div id="usuariosAtivos">
+                        0
+                    </div>
+
+                    <span>
+                        ✅ Ativos
+                    </span>
+
+                </div>
+
+                <div class="card-metrica">
+
+                    <div id="usuariosBloqueados">
+                        0
+                    </div>
+
+                    <span>
+                        ⛔ Bloqueados
+                    </span>
+
+                </div>
+
+                <div class="card-metrica">
+
+                    <div id="trialsAtivos">
+                        0
+                    </div>
+
+                    <span>
+                        🧪 Trials
+                    </span>
+
+                </div>
+
+                <div class="card-metrica">
+
+                    <div id="trialsExpirados">
+                        0
+                    </div>
+
+                    <span>
+                        ⚠ Expirados
+                    </span>
+
+                </div>
+
+                <div class="card-metrica">
+
+                    <div id="usuariosMaster">
+                        0
+                    </div>
+
+                    <span>
+                        👑 Masters
+                    </span>
+
+                </div>
+
+            </section>
+
+            <!-- TABELA -->
+
             <section class="card">
 
                 <h2>
@@ -122,11 +202,7 @@
                     ">
 
                     <table
-                        id="tabelaUsuarios"
-                        style="
-                            width:100%;
-                            border-collapse:collapse;
-                        ">
+                        id="tabelaUsuarios">
 
                         <thead>
 
@@ -156,11 +232,13 @@
 
                             <tr>
 
-                                <td colspan="8"
+                                <td
+                                    colspan="8"
                                     style="
                                         text-align:center;
                                         padding:20px;
-                                    ">
+                                    "
+                                >
 
                                     Carregando usuários...
 
@@ -191,15 +269,15 @@
     <script src="menu.js"></script>
 
     <script type="module"
-        src="firebase-config.js">
+            src="firebase-config.js">
     </script>
 
     <script type="module"
-        src="controle-acesso.js">
+            src="controle-acesso.js">
     </script>
 
     <script type="module"
-        src="admin.js">
+            src="admin.js">
     </script>
 
 </body>
