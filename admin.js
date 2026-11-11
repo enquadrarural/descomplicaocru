@@ -55,6 +55,33 @@ function formatarData(data) {
 }
 
 /* ==========================================
+   FORMATAR DATA E HORA
+========================================== */
+
+function formatarDataHora(data) {
+
+    try {
+
+        if (!data)
+            return "-";
+
+        return data
+            .toDate()
+            .toLocaleString(
+                "pt-BR"
+            );
+
+    }
+
+    catch {
+
+        return "-";
+
+    }
+
+}
+
+/* ==========================================
    ALTERAR STATUS
 ========================================== */
 
@@ -234,6 +261,12 @@ async function carregarUsuarios() {
                 </td>
 
                 <td>
+                    ${formatarDataHora(
+                        usuario.ultimoLogin
+                    )}
+                </td>
+
+                <td>
 
                     <button
                         class="btn"
@@ -367,20 +400,11 @@ async function validarMaster(
             "index.html";
 
         return;
+
     }
 
     const dados =
-    usuarioSnap.data();
-
-console.log(
-    "Dados usuário admin:",
-    dados
-);
-
-console.log(
-    "Perfil admin:",
-    dados.perfil
-);
+        usuarioSnap.data();
 
     if (
         dados.perfil !==
@@ -391,6 +415,7 @@ console.log(
             "index.html";
 
         return;
+
     }
 
     carregarUsuarios();
