@@ -25,7 +25,11 @@ import {
 
     setDoc,
 
-    getDoc
+    getDoc,
+
+    updateDoc,
+
+    serverTimestamp
 
 }
 from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
@@ -68,10 +72,26 @@ async function () {
 
     try {
 
-        await signInWithEmailAndPassword(
-            auth,
-            email,
-            senha
+        const credencial =
+            await signInWithEmailAndPassword(
+                auth,
+                email,
+                senha
+            );
+
+        const usuario =
+            credencial.user;
+
+        await updateDoc(
+            doc(
+                db,
+                "usuarios",
+                usuario.uid
+            ),
+            {
+                ultimoLogin:
+                    serverTimestamp()
+            }
         );
 
         window.location.href =
@@ -151,6 +171,12 @@ async function () {
                 usuarioRef,
                 {
 
+                    uid:
+                        uid,
+
+                    perfil:
+                        "usuario",
+
                     nome:
                         resultado.user.displayName,
 
@@ -167,8 +193,21 @@ async function () {
                         7,
 
                     criadoEm:
-                        new Date()
+                        serverTimestamp(),
 
+                    ultimoLogin:
+                        serverTimestamp()
+
+                }
+            );
+
+        } else {
+
+            await updateDoc(
+                usuarioRef,
+                {
+                    ultimoLogin:
+                        serverTimestamp()
                 }
             );
 
@@ -239,6 +278,7 @@ async function () {
 ========================== */
 
 onAuthStateChanged(
+
     auth,
 
     usuario => {
