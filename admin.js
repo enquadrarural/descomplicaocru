@@ -370,7 +370,17 @@ async function validarMaster(
     }
 
     const dados =
-        usuarioSnap.data();
+    usuarioSnap.data();
+
+console.log(
+    "Dados usuário admin:",
+    dados
+);
+
+console.log(
+    "Perfil admin:",
+    dados.perfil
+);
 
     if (
         dados.perfil !==
