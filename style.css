@@ -170,9 +170,15 @@ header h1 {
 ========================== */
 
 main {
-  max-width: 1100px;
-  margin: 20px auto;
-  padding: 10px;
+
+    width: 100%;
+
+    max-width: 1600px;
+
+    margin: 20px auto;
+
+    padding: 10px;
+
 }
 
 /* ==========================================
@@ -296,6 +302,7 @@ main {
   margin-bottom: 20px;
   border-radius: 10px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  max-width: 100%;
 }
 
 .card h2 {
@@ -957,11 +964,21 @@ footer {
    ADMIN
 ========================================== */
 
+.card-admin {
+
+    width: 100%;
+
+    max-width: none;
+
+}
+
 #tabelaUsuarios {
 
     width: 100%;
 
-    min-width: 1400px;
+    border-collapse: collapse;
+
+    table-layout: auto;
 
 }
 
@@ -972,19 +989,35 @@ footer {
 
     padding: 10px;
 
-    vertical-align: top;
+    vertical-align: middle;
+
+}
+
+#tabelaUsuarios th {
+
+    background: #edf8f6;
+
+    color: #0f766e;
+
+    font-weight: 600;
+
+}
+
+#tabelaUsuarios td {
+
+    font-size: 13px;
 
 }
 
 #tabelaUsuarios td:nth-child(7) {
 
-    min-width: 180px;
+    min-width: 140px;
 
 }
 
 #tabelaUsuarios td:nth-child(8) {
 
-    min-width: 360px;
+    min-width: 260px;
 
 }
 
@@ -1011,6 +1044,38 @@ footer {
 .btn-bloquear {
 
     background: #c0392b !important;
+
+}
+
+.admin-toolbar {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 20px;
+
+    flex-wrap: wrap;
+
+}
+
+.admin-search {
+
+    width: 100%;
+
+    max-width: 350px;
+
+    padding: 12px 14px;
+
+    border: 1px solid #dce5dc;
+
+    border-radius: 10px;
+
+    font-size: 14px;
 
 }
 

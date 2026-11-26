@@ -71,19 +71,6 @@
     </a>
 
     <a
-        href="hub.html"
-        id="menuHub"
-    >
-
-        <span class="menu-icon">🔎</span>
-
-        <span class="menu-text">
-            Hub Rural
-        </span>
-
-    </a>
-
-    <a
         id="menuAdmin"
         href="admin.html"
         style="display:none;"
@@ -130,13 +117,9 @@
 
                 <div class="card-metrica">
 
-                    <div id="totalUsuarios">
-                        0
-                    </div>
+                    <span>👥 Usuários</span>
 
-                    <span>
-                        👥 Usuários
-                    </span>
+					<div id="totalUsuarios">0</div>
 
                 </div>
 
@@ -204,7 +187,7 @@
 
             <!-- TABELA -->
 
-            <section class="card">
+            <section class="card card-admin">
 
                 <h2>
                     Usuários Cadastrados
@@ -218,6 +201,17 @@
                     Gerencie usuários, perfis, planos e acessos da plataforma.
 
                 </p>
+				
+				<div class="admin-toolbar">
+
+    <input
+        type="text"
+        id="buscarUsuario"
+        class="admin-search"
+        placeholder="🔎 Buscar usuário..."
+    >
+
+</div>
 
                 <div
                     style="
