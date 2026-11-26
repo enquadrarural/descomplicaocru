@@ -1,201 +1,426 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Descomplica Crédito Rural</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Descomplica o Crédito Rural</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="style.css">
+
 </head>
+
 <body>
 
-  <!-- MENU LATERAL -->
-  <aside class="sidebar">
+    <!-- MENU LATERAL -->
 
-    <button class="toggle-menu" onclick="toggleMenu()">
-      ☰
-    </button>
+    <aside class="sidebar">
 
-<nav>
+        <button class="toggle-menu"
+                onclick="toggleMenu()">
 
-    <a href="index.html">
+            ☰
 
-        <span class="menu-icon">🏠</span>
+        </button>
 
-        <span class="menu-text">
-            Início
-        </span>
+        <nav>
 
-    </a>
+            <a href="index.html">
 
-    <a
-        href="#"
-        id="menuEnquadramento"
-    >
+                <span class="menu-icon">🏠</span>
 
-        <span class="menu-icon">🌾</span>
+                <span class="menu-text">
+                    Início
+                </span>
 
-        <span class="menu-text">
-            Enquadramento
-        </span>
+            </a>
 
-    </a>
+            <a href="#"
+               id="menuEnquadramento">
 
-    <a
-        href="#"
-        id="menuCredIA"
-    >
+                <span class="menu-icon">🌾</span>
 
-        <span class="menu-icon">🤖</span>
+                <span class="menu-text">
+                    Enquadramento
+                </span>
 
-        <span class="menu-text">
-            CredIA Rural
-        </span>
+            </a>
 
-    </a>
+            <a href="#"
+               id="menuCredIA">
 
-    <a
-        href="hub.html"
-        id="menuHub"
-    >
+                <span class="menu-icon">🤖</span>
 
-        <span class="menu-icon">🔎</span>
+                <span class="menu-text">
+                    CredIA Rural
+                </span>
 
-        <span class="menu-text">
-            Hub Rural
-        </span>
+            </a>
 
-    </a>
+            <a id="menuAdmin"
+               href="admin.html"
+               style="display:none;">
 
-    <a
-        id="menuAdmin"
-        href="admin.html"
-        style="display:none;"
-    >
+                <span class="menu-icon">⚙️</span>
 
-        <span class="menu-icon">⚙️</span>
+                <span class="menu-text">
+                    Administração
+                </span>
 
-        <span class="menu-text">
-            Administração
-        </span>
+            </a>
 
-    </a>
+        </nav>
 
-</nav>
+    </aside>
 
-  </aside>
+    <!-- CONTEÚDO -->
 
-  <!-- CONTEÚDO PRINCIPAL -->
-  <div class="content">
+    <div class="content">
 
-    <header>
+        <header>
 
-      <div class="topo-sistema">
+            <div class="topo-sistema">
 
-        <h1>Descomplica o Crédito Rural</h1>
+                <h1>
+                    Descomplica o Crédito Rural
+                </h1>
 
-        <div
-          id="areaUsuario"
-          class="area-usuario"
-        >
+                <div
+                    id="areaUsuario"
+                    class="area-usuario">
 
-          <button
-            id="btnLogin"
-            class="btn-login"
-            onclick="window.location.href='login.html'"
-          >
-            👤 Entrar
-          </button>
+                    <button
+                        id="btnLogin"
+                        class="btn-login"
+                        onclick="window.location.href='login.html'">
+
+                        👤 Entrar
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </header>
+
+<main>
+
+    <!-- FUNCIONALIDADES -->
+
+    <section class="features">
+
+        <div class="feature-box">
+
+            <div class="icon">🚜</div>
+
+            <h3>
+                Classificação do Produtor
+            </h3>
+
+            <p>
+                Identifique se o produtor é pequeno,
+                médio ou grande conforme o MCR.
+            </p>
 
         </div>
 
-      </div>
+        <div class="feature-box">
 
-    </header>
+            <div class="icon">🤖</div>
 
-    <section class="hero">
+            <h3>
+                CredIA Rural
+            </h3>
 
-      <h2>Facilitando o Crédito Rural</h2>
+            <p>
+                Receba sugestões de linhas de crédito,
+                programas e finalidades compatíveis.
+            </p>
 
-      <p>
-        Ferramenta profissional para enquadrar produtores rurais
-        e operações de crédito.
-      </p>
+        </div>
 
-      <a
-        href="#"
-        id="btnHeroEnquadramento"
-        class="btn-hero"
-      >
-        Iniciar Enquadramento
-      </a>
+        <div class="feature-box">
+
+            <div class="icon">🗺️</div>
+
+            <h3>
+                Mapa Ambiental do Agro
+            </h3>
+
+            <p>
+                Funcionalidade prevista para futuras versões.
+            </p>
+
+        </div>
 
     </section>
 
-    <main>
+    <!-- HUB RURAL -->
 
-      <section class="features">
+    <div class="hub-container">
 
-        <div class="feature-box">
+            <div class="hub-container">
 
-          <div class="icon">🚜</div>
+                <div class="hub-header">
 
-          <h3>Classificação do Produtor</h3>
+                    <h2>
+                        🔎 Hub Rural
+                    </h2>
 
-          <p>
-            Identifique se o produtor é pequeno, médio ou grande
-            com base no Manual de Crédito Rural.
-          </p>
+                    <p>
+                        Acesso rápido aos principais sistemas utilizados
+                        nas análises de crédito rural.
+                    </p>
 
-        </div>
+                    <input
+                        type="text"
+                        id="search"
+                        class="hub-search"
+                        placeholder="Pesquisar sistema..."
+                    >
 
-        <div class="feature-box">
+                </div>
 
-          <div class="icon">🤖</div>
+                <!-- IMÓVEL RURAL -->
 
-          <h3>CredIA Rural</h3>
+                <section class="hub-module">
 
-          <p>
-            Descreva a operação pretendida pelo produtor e receba
-            sugestões de linhas de crédito compatíveis,
-            finalidades, prazos e orientações técnicas.
-          </p>
+                    <div class="hub-module-header">
 
-        </div>
+                        <div class="hub-module-title">
 
-        <div class="feature-box">
+                            🏡 Imóvel Rural
 
-          <div class="icon">🗺️</div>
+                        </div>
 
-          <h3>Mapa Ambiental do Agro — Em Breve</h3>
+                        <div class="hub-badge">
 
-          <p>
-            Visualize propriedades rurais, glebas e informações
-            ambientais para análise de crédito.
-          </p>
+                            7 Consultas
 
-        </div>
+                        </div>
 
-      </section>
+                    </div>
 
-    </main>
+                    <div class="hub-cards">
 
-    <footer>
-      <p>© 2026 — Descomplica o CRU</p>
-    </footer>
+                        <a id="link-car"
+                           class="hub-card"
+                           target="_blank">
 
-  </div>
+                            <div class="hub-card-title">
+                                📍 Consulta CAR
+                            </div>
 
-  <script src="menu.js"></script>
+                            <div class="hub-card-desc">
+                                Consulta ao Cadastro Ambiental Rural.
+                            </div>
 
-  <script type="module"
-          src="firebase-config.js">
-  </script>
+                        </a>
 
-  <script type="module"
-          src="controle-acesso.js">
-  </script>
+                        <a id="link-itr"
+                           class="hub-card"
+                           target="_blank">
+
+                            <div class="hub-card-title">
+                                🧾 Consulta ITR
+                            </div>
+
+                            <div class="hub-card-desc">
+                                Consulta ao Imposto Territorial Rural.
+                            </div>
+
+                        </a>
+
+                        <a id="link-ccir"
+                           class="hub-card"
+                           target="_blank">
+
+                            <div class="hub-card-title">
+                                🏙️ Consulta CCIR
+                            </div>
+
+                            <div class="hub-card-desc">
+                                Certificado de Cadastro de Imóvel Rural.
+                            </div>
+
+                        </a>
+
+                        <a id="link-mf"
+                           class="hub-card"
+                           target="_blank">
+
+                            <div class="hub-card-title">
+                                📏 Módulo Fiscal
+                            </div>
+
+                            <div class="hub-card-desc">
+                                Consulta de módulos fiscais por município.
+                            </div>
+
+                        </a>
+
+                        <a id="link-cartorio"
+                           class="hub-card"
+                           target="_blank">
+
+                            <div class="hub-card-title">
+                                🏛️ Cartório de Imóveis Online
+                            </div>
+
+                            <div class="hub-card-desc">
+                                Serviços eletrônicos de registro imobiliário.
+                            </div>
+
+                        </a>
+
+                        <a id="link-mapbiomas"
+                           class="hub-card"
+                           target="_blank">
+
+                            <div class="hub-card-title">
+                                🌳 MapBiomas
+                            </div>
+
+                            <div class="hub-card-desc">
+                                Alertas, monitoramento e laudos ambientais.
+                            </div>
+
+                        </a>
+
+                        <a id="link-prodes"
+                           class="hub-card"
+                           target="_blank">
+
+                            <div class="hub-card-title">
+                                🛰️ MMA PRODES
+                            </div>
+
+                            <div class="hub-card-desc">
+                                Monitoramento oficial de desmatamento.
+                            </div>
+
+                        </a>
+
+                    </div>
+
+                </section>
+
+                <!-- PRODUTOR RURAL -->
+
+                <section class="hub-module">
+
+                    <div class="hub-module-header">
+
+                        <div class="hub-module-title">
+
+                            👨‍🌾 Produtor Rural
+
+                        </div>
+
+                        <div class="hub-badge">
+
+                            4 Consultas
+
+                        </div>
+
+                    </div>
+
+                    <div class="hub-cards">
+
+                        <a id="link-rgp"
+                           class="hub-card"
+                           target="_blank">
+
+                            <div class="hub-card-title">
+                                🎣 RGP Pescador
+                            </div>
+
+                            <div class="hub-card-desc">
+                                Registro Geral da Atividade Pesqueira.
+                            </div>
+
+                        </a>
+
+                        <a id="link-receita"
+                           class="hub-card"
+                           target="_blank">
+
+                            <div class="hub-card-title">
+                                🧾 CND Receita Federal
+                            </div>
+
+                            <div class="hub-card-desc">
+                                Certidão Negativa de Débitos Federais.
+                            </div>
+
+                        </a>
+
+                        <a id="link-ibama"
+                           class="hub-card"
+                           target="_blank">
+
+                            <div class="hub-card-title">
+                                🌱 CND IBAMA
+                            </div>
+
+                            <div class="hub-card-desc">
+                                Certidão negativa de débitos ambientais.
+                            </div>
+
+                        </a>
+
+                        <a id="link-sintegra"
+                           class="hub-card"
+                           target="_blank">
+
+                            <div class="hub-card-title">
+                                🔎 Sintegra
+                            </div>
+
+                            <div class="hub-card-desc">
+                                Consulta pública de contribuintes estaduais.
+                            </div>
+
+                        </a>
+
+                    </div>
+
+                </section>
+
+            </div>
+        </main>
+
+        <footer>
+
+            <p>
+                © 2026 — Descomplica o CRU
+            </p>
+
+        </footer>
+
+    </div>
+
+    <script src="menu.js"></script>
+
+    <script src="hub.js"></script>
+
+    <script type="module"
+            src="firebase-config.js">
+    </script>
+
+    <script type="module"
+            src="controle-acesso.js">
+    </script>
 
 </body>
+
 </html>
