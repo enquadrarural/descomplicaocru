@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Hub de Consultas Rurais</title>
+
+    <link rel="stylesheet"
+          href="style.css">
+
+</head>
+
+<body>
+
+    <!-- MENU -->
+
+    <aside class="sidebar">
+
+        <button
+            class="toggle-menu"
+            onclick="toggleMenu()">
+
+            ☰
+
+        </button>
+
+        <nav>
+
+            <a href="index.html">
+
+                <span class="menu-icon">🏠</span>
+
+                <span class="menu-text">
+                    Início
+                </span>
+
+            </a>
+
+            <a
+                href="#"
+                id="menuEnquadramento">
+
+                <span class="menu-icon">🌾</span>
+
+                <span class="menu-text">
+                    Enquadramento
+                </span>
+
+            </a>
+
+            <a
+                href="#"
+                id="menuCredIA">
+
+                <span class="menu-icon">🤖</span>
+
+                <span class="menu-text">
+                    CredIA Rural
+                </span>
+
+            </a>
+
+            <a
+                href="hub.html"
+                id="menuHub"
+                class="menu-ativo">
+
+                <span class="menu-icon">🔎</span>
+
+                <span class="menu-text">
+                    Hub Rural
+                </span>
+
+            </a>
+
+            <a
+                id="menuAdmin"
+                href="admin.html"
+                style="display:none;">
+
+                <span class="menu-icon">⚙️</span>
+
+                <span class="menu-text">
+                    Administração
+                </span>
+
+            </a>
+
+        </nav>
+
+    </aside>
+
+    <!-- CONTEÚDO -->
+
+    <div class="content">
+
+        <header>
+
+            <div class="topo-sistema">
+
+                <h1>
+                    🌱 Hub de Consultas Rurais
+                </h1>
+
+                <div
+                    id="areaUsuario"
+                    class="area-usuario">
+                </div>
+
+            </div>
+
+        </header>
+
+        <main>
+
+            <div class="hub-container">
+
+                <div class="hub-header">
+
+                    <p>
+
+                        Central de acesso rápido aos principais sistemas
+                        utilizados nas análises rurais.
+
+                    </p>
+
+                    <input
+                        type="text"
+                        id="search"
+                        class="hub-search"
+                        placeholder="Pesquisar sistema..."
+                    >
+
+                </div>
+
+                <!-- IMÓVEL RURAL -->
+
+                <section class="hub-module">
+
+                    <div class="hub-module-header">
+
+                        <div class="hub-module-title">
+
+                            🏡 Imóvel Rural
+
+                        </div>
+
+                        <div class="hub-badge">
+
+                            7 Consultas
+
+                        </div>
+
+                    </div>
+
+                    <div class="hub-cards">
+
+                        <a id="link-car"
+                           class="hub-card"
+                           target="_blank">
+
+                            <div class="hub-card-title">
+                                📍 Consulta CAR
+                            </div>
+
+                            <div class="hub-card-desc">
+                                Consulta ao Cadastro Ambiental Rural.
+                            </div>
+
+                        </a>
+
+                        <a id="link-itr"
+                           class="hub-card"
+                           target="_blank">
+
+                            <div class="hub-card-title">
+                                🧾 Consulta ITR
+                            </div>
+
+                            <div class="hub-card-desc">
+                                Consulta ao Imposto Territorial Rural.
+                            </div>
+
+                        </a>
+
+                        <a id="link-ccir"
+                           class="hub-card"
+                           target="_blank">
+
+                            <div class="hub-card-title">
+                                🏙️ Consulta CCIR
+                            </div>
+
+                            <div class="hub-card-desc">
+                                Certificado de Cadastro de Imóvel Rural.
+                            </div>
+
+                        </a>
+
+                        <a id="link-mf"
+                           class="hub-card"
+                           target="_blank">
+
+                            <div class="hub-card-title">
+                                📏 Módulo Fiscal
+                            </div>
+
+                            <div class="hub-card-desc">
+                                Consulta de módulos fiscais por município.
+                            </div>
+
+                        </a>
+
+                        <a id="link-cartorio"
+                           class="hub-card"
+                           target="_blank">
+
+                            <div class="hub-card-title">
+                                🏛️ Cartório de Imóveis Online
+                            </div>
+
+                            <div class="hub-card-desc">
+                                Serviços eletrônicos de registro imobiliário.
+                            </div>
+
+                        </a>
+
+                        <a id="link-mapbiomas"
+                           class="hub-card"
+                           target="_blank">
+
+                            <div class="hub-card-title">
+                                🌳 MapBiomas
+                            </div>
+
+                            <div class="hub-card-desc">
+                                Alertas, monitoramento e laudos ambientais.
+                            </div>
+
+                        </a>
+
+                        <a id="link-prodes"
+                           class="hub-card"
+                           target="_blank">
+
+                            <div class="hub-card-title">
+                                🛰️ MMA PRODES
+                            </div>
+
+                            <div class="hub-card-desc">
+                                Monitoramento oficial de desmatamento.
+                            </div>
+
+                        </a>
+
+                    </div>
+
+                </section>
+
+                <!-- PRODUTOR RURAL -->
+
+                <section class="hub-module">
+
+                    <div class="hub-module-header">
+
+                        <div class="hub-module-title">
+
+                            👨‍🌾 Produtor Rural
+
+                        </div>
+
+                        <div class="hub-badge">
+
+                            4 Consultas
+
+                        </div>
+
+                    </div>
+
+                    <div class="hub-cards">
+
+                        <a id="link-rgp"
+                           class="hub-card"
+                           target="_blank">
+
+                            <div class="hub-card-title">
+                                🎣 RGP Pescador
+                            </div>
+
+                            <div class="hub-card-desc">
+                                Registro Geral da Atividade Pesqueira.
+                            </div>
+
+                        </a>
+
+                        <a id="link-receita"
+                           class="hub-card"
+                           target="_blank">
+
+                            <div class="hub-card-title">
+                                🧾 CND Receita Federal
+                            </div>
+
+                            <div class="hub-card-desc">
+                                Certidão Negativa de Débitos Federais.
+                            </div>
+
+                        </a>
+
+                        <a id="link-ibama"
+                           class="hub-card"
+                           target="_blank">
+
+                            <div class="hub-card-title">
+                                🌱 CND IBAMA
+                            </div>
+
+                            <div class="hub-card-desc">
+                                Certidão negativa de débitos ambientais.
+                            </div>
+
+                        </a>
+
+                        <a id="link-sintegra"
+                           class="hub-card"
+                           target="_blank">
+
+                            <div class="hub-card-title">
+                                🔎 Sintegra
+                            </div>
+
+                            <div class="hub-card-desc">
+                                Consulta pública de contribuintes estaduais.
+                            </div>
+
+                        </a>
+
+                    </div>
+
+                </section>
+
+                <div class="hub-footer">
+
+                    Hub de Consultas Rurais - Versão 1.0
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <script src="menu.js"></script>
+
+    <script src="hub.js"></script>
+
+</body>
+
+</html>

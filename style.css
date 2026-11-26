@@ -1088,3 +1088,331 @@ footer {
     }
 
 }
+
+/* ==========================================
+   HUB DE CONSULTAS
+========================================== */
+
+.hub-container {
+
+    width: 100%;
+
+    max-width: 100%;
+
+}
+
+.hub-header {
+
+    margin-bottom: 30px;
+
+}
+
+.hub-header h1 {
+
+    color: #0f766e;
+
+    font-size: 28px;
+
+    font-weight: 700;
+
+    margin-bottom: 10px;
+
+}
+
+.hub-header p {
+
+    color: #64748b;
+
+    font-size: 15px;
+
+    margin-bottom: 18px;
+
+}
+
+.hub-search {
+
+    width: 100%;
+
+    max-width: 500px;
+
+    padding: 12px 16px;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 10px;
+
+    font-size: 14px;
+
+    background: #ffffff;
+
+}
+
+.hub-search:focus {
+
+    outline: none;
+
+    border-color: #16a085;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(
+            22,
+            160,
+            133,
+            0.15
+        );
+
+}
+
+.hub-module {
+
+    background: #edf8f6;
+
+    border: 2px solid #74d4bf;
+
+    border-radius: 18px;
+
+    padding: 24px;
+
+    margin-bottom: 24px;
+
+}
+
+.hub-module-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 20px;
+
+}
+
+.hub-module-title {
+
+    font-size: 24px;
+
+    font-weight: 700;
+
+    color: #0f766e;
+
+}
+
+.hub-badge {
+
+    background: #ffffff;
+
+    border: 1px solid #16a085;
+
+    color: #16a085;
+
+    padding: 8px 18px;
+
+    border-radius: 999px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+}
+
+.hub-cards {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(
+                280px,
+                1fr
+            )
+        );
+
+    gap: 18px;
+
+}
+
+.hub-card {
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 12px;
+
+    padding: 20px;
+
+    text-decoration: none;
+
+    color: inherit;
+
+    min-height: 120px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: flex-start;
+
+    transition: all .25s ease;
+
+    box-shadow:
+        0 2px 8px
+        rgba(
+            0,
+            0,
+            0,
+            .04
+        );
+
+}
+
+.hub-card:hover {
+
+    transform: translateY(-4px);
+
+    border-color: #16a085;
+
+    box-shadow:
+        0 10px 24px
+        rgba(
+            0,
+            0,
+            0,
+            .08
+        );
+
+}
+
+.hub-card-title {
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    color: #1e293b;
+
+    margin-bottom: 10px;
+
+    width: 100%;
+
+}
+
+.hub-card-desc {
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    color: #64748b;
+
+    width: 100%;
+
+}
+
+.hub-footer {
+
+    margin-top: 30px;
+
+    text-align: center;
+
+    color: #64748b;
+
+    font-size: 13px;
+
+}
+
+/* ==========================================
+   MENU HUB ATIVO
+========================================== */
+
+.menu-ativo {
+
+    background: rgba(
+        255,
+        255,
+        255,
+        0.15
+    );
+
+    border-radius: 8px;
+
+    font-weight: 600;
+
+}
+
+.menu-ativo .menu-icon {
+
+    transform: scale(
+        1.05
+    );
+
+}
+
+/* ==========================================
+   RESPONSIVO
+========================================== */
+
+@media (max-width: 1200px) {
+
+    .hub-cards {
+
+        grid-template-columns:
+            repeat(
+                3,
+                1fr
+            );
+
+    }
+
+}
+
+@media (max-width: 900px) {
+
+    .hub-cards {
+
+        grid-template-columns:
+            repeat(
+                2,
+                1fr
+            );
+
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .hub-module-header {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 10px;
+
+    }
+
+    .hub-header h1 {
+
+        font-size: 22px;
+
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .hub-cards {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+}
