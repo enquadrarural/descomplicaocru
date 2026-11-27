@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Ambiental - Descomplica o CRU</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="style.css">
+
+    <link rel="icon"
+          type="image/png"
+          href="favicon.png">
+
+</head>
+
+<body data-modulo="ambiental">
+
+    <aside class="sidebar">
+
+        <button
+            class="toggle-menu"
+            onclick="toggleMenu()">
+
+            ☰
+
+        </button>
+
+        <nav>
+
+            <a href="index.html">
+
+                <span class="menu-icon">🏠</span>
+                <span class="menu-text">Início</span>
+
+            </a>
+
+            <a href="#"
+               id="menuEnquadramento">
+
+                <span class="menu-icon">🌾</span>
+                <span class="menu-text">Enquadramento</span>
+
+            </a>
+
+            <a href="#"
+               id="menuCredIA">
+
+                <span class="menu-icon">🤖</span>
+                <span class="menu-text">CredIA Rural</span>
+
+            </a>
+
+            <a href="empreendimento.html">
+
+                <span class="menu-icon">🚜</span>
+                <span class="menu-text">Empreendimento</span>
+
+            </a>
+
+            <a href="simulador.html">
+
+                <span class="menu-icon">💰</span>
+                <span class="menu-text">Simulador</span>
+
+            </a>
+
+            <a href="ambiental.html">
+
+                <span class="menu-icon">🌳</span>
+                <span class="menu-text">Ambiental</span>
+
+            </a>
+
+            <a href="downloads.html"
+               class="menu-ativo">
+
+                <span class="menu-icon">📥</span>
+                <span class="menu-text">Downloads</span>
+
+            </a>
+
+            <a id="menuAdmin"
+               href="admin.html"
+               style="display:none;">
+
+                <span class="menu-icon">⚙️</span>
+                <span class="menu-text">Administração</span>
+
+            </a>
+
+        </nav>
+
+    </aside>
+
+    <div class="content">
+
+        <header>
+
+            <div class="topo-sistema">
+
+                <h1>
+                    🌳 Central Ambiental Rural
+                </h1>
+
+                <div
+                    id="areaUsuario"
+                    class="area-usuario">
+                </div>
+
+            </div>
+
+        </header>
+
+        <main>
+
+            <section class="card">
+
+                <h2>
+                    Consulta Ambiental
+                </h2>
+
+                <p>
+
+                    Utilize os filtros abaixo para iniciar
+                    uma análise ambiental preliminar.
+
+                </p>
+
+                <div class="grid">
+
+                    <div>
+
+                        <label>
+                            CPF / CNPJ
+                        </label>
+
+                        <input
+                            type="text"
+                            id="cpfCnpj"
+                            placeholder="Informe o CPF ou CNPJ"
+                        >
+
+                    </div>
+
+                    <div>
+
+                        <label>
+                            Número do CAR
+                        </label>
+
+                        <input
+                            type="text"
+                            id="numeroCar"
+                            placeholder="Informe o CAR"
+                        >
+
+                    </div>
+
+                    <div>
+
+                        <label>
+                            Município
+                        </label>
+
+                        <input
+                            type="text"
+                            id="municipio"
+                            placeholder="Município"
+                        >
+
+                    </div>
+
+                </div>
+
+                <button
+                    class="btn"
+                    id="btnConsultarAmbiental">
+
+                    🔎 Consultar
+
+                </button>
+
+            </section>
+
+            <section class="hub-module">
+
+                <div class="hub-module-header">
+
+                    <div class="hub-module-title">
+
+                        📍 Consultas Ambientais
+
+                    </div>
+
+                    <div class="hub-badge">
+
+                        4 Consultas
+
+                    </div>
+
+                </div>
+
+                <div class="hub-cards">
+
+                    <a
+                        id="link-car-ambiental"
+                        class="hub-card"
+                        target="_blank">
+
+                        <div class="hub-card-title">
+
+                            🌱 CAR
+
+                        </div>
+
+                        <div class="hub-card-desc">
+
+                            Cadastro Ambiental Rural.
+
+                        </div>
+
+                    </a>
+
+                    <a
+                        id="link-ibama-ambiental"
+                        class="hub-card"
+                        target="_blank">
+
+                        <div class="hub-card-title">
+
+                            🚫 IBAMA
+
+                        </div>
+
+                        <div class="hub-card-desc">
+
+                            Consulta de embargos e restrições.
+
+                        </div>
+
+                    </a>
+
+                    <a
+                        id="link-prodes-ambiental"
+                        class="hub-card"
+                        target="_blank">
+
+                        <div class="hub-card-title">
+
+                            🛰️ PRODES
+
+                        </div>
+
+                        <div class="hub-card-desc">
+
+                            Monitoramento oficial de desmatamento.
+
+                        </div>
+
+                    </a>
+
+                    <a
+                        id="link-mapbiomas-ambiental"
+                        class="hub-card"
+                        target="_blank">
+
+                        <div class="hub-card-title">
+
+                            🌎 MapBiomas
+
+                        </div>
+
+                        <div class="hub-card-desc">
+
+                            Alertas e monitoramento ambiental.
+
+                        </div>
+
+                    </a>
+
+                </div>
+
+            </section>
+
+            <section class="card">
+
+                <h2>
+                    Resultado da Consulta
+                </h2>
+
+                <div
+                    id="resultadoAmbiental"
+                    class="resultado-card">
+
+                    <div>
+
+                        Informe os dados desejados e clique
+                        em "Consultar".
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <section class="card">
+
+                <h2>
+                    Checklist Ambiental Rural
+                </h2>
+
+                <div
+                    class="resultado-card">
+
+                    <div>
+
+                        ✅ CAR Regular<br>
+                        ✅ Reserva Legal<br>
+                        ✅ APP<br>
+                        ✅ Embargos IBAMA<br>
+                        ✅ Sobreposição com Áreas Protegidas<br>
+                        ✅ Histórico de Desmatamento<br>
+                        ✅ Alertas Ambientais
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+        <footer>
+
+            <p>
+                © 2026 — Descomplica o CRU
+            </p>
+
+        </footer>
+
+    </div>
+
+    <script src="menu.js"></script>
+
+    <script type="module"
+            src="firebase-config.js">
+    </script>
+
+    <script type="module"
+            src="controle-acesso.js">
+    </script>
+
+</body>
+
+</html>

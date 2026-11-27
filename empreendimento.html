@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Empreendimentos - Descomplica o CRU</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="style.css">
+
+    <link rel="icon"
+          type="image/png"
+          href="favicon.png">
+
+</head>
+
+<body data-modulo="empreendimento">
+
+    <!-- MENU -->
+
+    <aside class="sidebar">
+
+        <button
+            class="toggle-menu"
+            onclick="toggleMenu()">
+
+            ☰
+
+        </button>
+
+<nav>
+
+            <a href="index.html">
+
+                <span class="menu-icon">🏠</span>
+                <span class="menu-text">Início</span>
+
+            </a>
+
+            <a href="#"
+               id="menuEnquadramento">
+
+                <span class="menu-icon">🌾</span>
+                <span class="menu-text">Enquadramento</span>
+
+            </a>
+
+            <a href="#"
+               id="menuCredIA">
+
+                <span class="menu-icon">🤖</span>
+                <span class="menu-text">CredIA Rural</span>
+
+            </a>
+
+            <a href="empreendimento.html">
+
+                <span class="menu-icon">🚜</span>
+                <span class="menu-text">Empreendimento</span>
+
+            </a>
+
+            <a href="simulador.html">
+
+                <span class="menu-icon">💰</span>
+                <span class="menu-text">Simulador</span>
+
+            </a>
+
+            <a href="ambiental.html">
+
+                <span class="menu-icon">🌳</span>
+                <span class="menu-text">Ambiental</span>
+
+            </a>
+
+            <a href="downloads.html"
+               class="menu-ativo">
+
+                <span class="menu-icon">📥</span>
+                <span class="menu-text">Downloads</span>
+
+            </a>
+
+            <a id="menuAdmin"
+               href="admin.html"
+               style="display:none;">
+
+                <span class="menu-icon">⚙️</span>
+                <span class="menu-text">Administração</span>
+
+            </a>
+
+        </nav>
+
+    </aside>
+
+    <!-- CONTEÚDO -->
+
+    <div class="content">
+
+        <header>
+
+            <div class="topo-sistema">
+
+                <h1>
+                    🚜 Consulta de Empreendimentos
+                </h1>
+
+                <div
+                    id="areaUsuario"
+                    class="area-usuario">
+                </div>
+
+            </div>
+
+        </header>
+
+        <main>
+
+            <!-- APRESENTAÇÃO -->
+
+            <section class="card">
+
+                <h2>
+                    Localizador de Códigos de Empreendimento
+                </h2>
+
+                <p>
+
+                    Utilize os filtros abaixo para localizar o
+                    código mais adequado para registrar a
+                    operação de crédito rural.
+
+                </p>
+
+            </section>
+
+            <!-- FILTROS -->
+
+            <section class="card">
+
+                <h2>
+                    Filtros
+                </h2>
+
+                <div class="grid">
+
+                    <div>
+
+                        <label>
+                            Atividade
+                        </label>
+
+                        <select id="atividade">
+
+                            <option value="">
+                                Selecione
+                            </option>
+
+                            <option>
+                                Agricultura
+                            </option>
+
+                            <option>
+                                Pecuária
+                            </option>
+
+                            <option>
+                                Agroindústria
+                            </option>
+
+                            <option>
+                                Silvicultura
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <div>
+
+                        <label>
+                            Finalidade
+                        </label>
+
+                        <select id="finalidade">
+
+                            <option value="">
+                                Selecione
+                            </option>
+
+                            <option>
+                                Custeio
+                            </option>
+
+                            <option>
+                                Investimento
+                            </option>
+
+                            <option>
+                                Comercialização
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <div>
+
+                        <label>
+                            Palavra-chave
+                        </label>
+
+                        <input
+                            type="text"
+                            id="palavraChave"
+                            placeholder="Ex.: Ordenha, Trator, Aviário"
+                        >
+
+                    </div>
+
+                </div>
+
+                <button
+                    class="btn"
+                    id="btnBuscarEmpreendimento">
+
+                    🔎 Buscar Empreendimento
+
+                </button>
+
+            </section>
+
+            <!-- RESULTADO -->
+
+            <section class="card">
+
+                <h2>
+                    Resultado da Pesquisa
+                </h2>
+
+                <div
+                    id="resultadoEmpreendimento"
+                    class="resultado-card">
+
+                    <div>
+
+                        Informe os filtros desejados e clique
+                        em "Buscar Empreendimento".
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- EXEMPLOS -->
+
+            <section class="card">
+
+                <h2>
+                    Exemplos de Consulta
+                </h2>
+
+                <div class="grid">
+
+                    <div class="feature-box">
+
+                        <div class="icon">
+                            🐄
+                        </div>
+
+                        <h3>
+                            Sala de Ordenha
+                        </h3>
+
+                        <p>
+                            Investimentos voltados para produção leiteira.
+                        </p>
+
+                    </div>
+
+                    <div class="feature-box">
+
+                        <div class="icon">
+                            🚜
+                        </div>
+
+                        <h3>
+                            Máquinas Agrícolas
+                        </h3>
+
+                        <p>
+                            Tratores, plantadeiras e implementos.
+                        </p>
+
+                    </div>
+
+                    <div class="feature-box">
+
+                        <div class="icon">
+                            🐖
+                        </div>
+
+                        <h3>
+                            Suinocultura
+                        </h3>
+
+                        <p>
+                            Instalações, equipamentos e ampliação.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+        <footer>
+
+            <p>
+                © 2026 — Descomplica o CRU
+            </p>
+
+        </footer>
+
+    </div>
+
+    <script src="menu.js"></script>
+
+    <script type="module"
+            src="firebase-config.js">
+    </script>
+
+    <script type="module"
+            src="controle-acesso.js">
+    </script>
+
+</body>
+
+</html>

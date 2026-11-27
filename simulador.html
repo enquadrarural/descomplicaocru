@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Simulador Rural - Descomplica o CRU</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="style.css">
+
+    <link rel="icon"
+          type="image/png"
+          href="favicon.png">
+
+</head>
+
+<body data-modulo="simulador">
+
+    <!-- MENU -->
+
+    <aside class="sidebar">
+
+        <button
+            class="toggle-menu"
+            onclick="toggleMenu()">
+
+            ☰
+
+        </button>
+
+<nav>
+
+            <a href="index.html">
+
+                <span class="menu-icon">🏠</span>
+                <span class="menu-text">Início</span>
+
+            </a>
+
+            <a href="#"
+               id="menuEnquadramento">
+
+                <span class="menu-icon">🌾</span>
+                <span class="menu-text">Enquadramento</span>
+
+            </a>
+
+            <a href="#"
+               id="menuCredIA">
+
+                <span class="menu-icon">🤖</span>
+                <span class="menu-text">CredIA Rural</span>
+
+            </a>
+
+            <a href="empreendimento.html">
+
+                <span class="menu-icon">🚜</span>
+                <span class="menu-text">Empreendimento</span>
+
+            </a>
+
+            <a href="simulador.html">
+
+                <span class="menu-icon">💰</span>
+                <span class="menu-text">Simulador</span>
+
+            </a>
+
+            <a href="ambiental.html">
+
+                <span class="menu-icon">🌳</span>
+                <span class="menu-text">Ambiental</span>
+
+            </a>
+
+            <a href="downloads.html"
+               class="menu-ativo">
+
+                <span class="menu-icon">📥</span>
+                <span class="menu-text">Downloads</span>
+
+            </a>
+
+            <a id="menuAdmin"
+               href="admin.html"
+               style="display:none;">
+
+                <span class="menu-icon">⚙️</span>
+                <span class="menu-text">Administração</span>
+
+            </a>
+
+        </nav>
+
+    </aside>
+
+    <!-- CONTEÚDO -->
+
+    <div class="content">
+
+        <header>
+
+            <div class="topo-sistema">
+
+                <h1>
+                    💰 Simulador Rural
+                </h1>
+
+                <div
+                    id="areaUsuario"
+                    class="area-usuario">
+                </div>
+
+            </div>
+
+        </header>
+
+        <main>
+
+            <section class="card">
+
+                <h2>
+                    Dados da Operação
+                </h2>
+
+                <div class="grid">
+
+                    <div>
+
+                        <label>
+                            Programa
+                        </label>
+
+                        <select id="programa">
+
+                            <option>
+                                Pronaf
+                            </option>
+
+                            <option>
+                                Pronamp
+                            </option>
+
+                            <option>
+                                Investimento
+                            </option>
+
+                            <option>
+                                Industrialização
+                            </option>
+
+                            <option>
+                                Comercialização
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <div>
+
+                        <label>
+                            Valor Financiado (R$)
+                        </label>
+
+                        <input
+                            type="number"
+                            id="valorFinanciado"
+                            placeholder="300000"
+                        >
+
+                    </div>
+
+                    <div>
+
+                        <label>
+                            Taxa de Juros (% a.a.)
+                        </label>
+
+                        <input
+                            type="number"
+                            id="taxaJuros"
+                            step="0.01"
+                            placeholder="8"
+                        >
+
+                    </div>
+
+                    <div>
+
+                        <label>
+                            Prazo (anos)
+                        </label>
+
+                        <input
+                            type="number"
+                            id="prazo"
+                            placeholder="10"
+                        >
+
+                    </div>
+
+                    <div>
+
+                        <label>
+                            Carência (anos)
+                        </label>
+
+                        <input
+                            type="number"
+                            id="carencia"
+                            placeholder="3"
+                        >
+
+                    </div>
+
+                </div>
+
+                <button
+                    class="btn"
+                    onclick="simularOperacao()">
+
+                    💰 Simular Operação
+
+                </button>
+
+            </section>
+
+            <section class="card">
+
+                <h2>
+                    Resultado
+                </h2>
+
+                <div
+                    id="resultadoSimulador"
+                    class="resultado-card">
+
+                    <div>
+
+                        Informe os dados da operação e clique em
+                        <strong>Simular Operação</strong>.
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <section class="card">
+
+                <h2>
+                    Cronograma Simplificado
+                </h2>
+
+                <div
+                    id="cronogramaSimulador"
+                    class="resultado-card">
+
+                    <div>
+
+                        O cronograma será exibido após a simulação.
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+        <footer>
+
+            <p>
+                © 2026 — Descomplica o CRU
+            </p>
+
+        </footer>
+
+    </div>
+
+    <script src="menu.js"></script>
+
+    <script>
+
+        function simularOperacao() {
+
+            const valor =
+                parseFloat(
+                    document.getElementById(
+                        "valorFinanciado"
+                    ).value
+                ) || 0;
+
+            const taxa =
+                parseFloat(
+                    document.getElementById(
+                        "taxaJuros"
+                    ).value
+                ) || 0;
+
+            const prazo =
+                parseInt(
+                    document.getElementById(
+                        "prazo"
+                    ).value
+                ) || 0;
+
+            const carencia =
+                parseInt(
+                    document.getElementById(
+                        "carencia"
+                    ).value
+                ) || 0;
+
+            if (
+                valor <= 0 ||
+                taxa <= 0 ||
+                prazo <= 0
+            ) {
+
+                alert(
+                    "Preencha todos os campos."
+                );
+
+                return;
+
+            }
+
+            const jurosTotais =
+                valor *
+                (
+                    taxa / 100
+                ) *
+                prazo;
+
+            const montante =
+                valor +
+                jurosTotais;
+
+            const anosPagamento =
+                prazo - carencia;
+
+            const parcelaAnual =
+                montante /
+                anosPagamento;
+
+            document.getElementById(
+                "resultadoSimulador"
+            ).innerHTML = `
+                <div>
+
+                    <strong>Valor Financiado:</strong>
+                    R$ ${valor.toLocaleString('pt-BR',{minimumFractionDigits:2})}
+                    <br><br>
+
+                    <strong>Juros Totais Estimados:</strong>
+                    R$ ${jurosTotais.toLocaleString('pt-BR',{minimumFractionDigits:2})}
+                    <br><br>
+
+                    <strong>Montante Final:</strong>
+                    R$ ${montante.toLocaleString('pt-BR',{minimumFractionDigits:2})}
+                    <br><br>
+
+                    <strong>Parcela Anual Estimada:</strong>
+                    R$ ${parcelaAnual.toLocaleString('pt-BR',{minimumFractionDigits:2})}
+
+                </div>
+            `;
+
+            let cronograma = "";
+
+            for (
+                let ano = 1;
+                ano <= prazo;
+                ano++
+            ) {
+
+                if (
+                    ano <= carencia
+                ) {
+
+                    cronograma +=
+                        `<p><strong>Ano ${ano}:</strong> Carência</p>`;
+
+                } else {
+
+                    cronograma +=
+                        `<p><strong>Ano ${ano}:</strong> R$ ${parcelaAnual.toLocaleString('pt-BR',{minimumFractionDigits:2})}</p>`;
+
+                }
+
+            }
+
+            document.getElementById(
+                "cronogramaSimulador"
+            ).innerHTML =
+                `<div>${cronograma}</div>`;
+
+        }
+
+    </script>
+
+    <script type="module"
+            src="firebase-config.js">
+    </script>
+
+    <script type="module"
+            src="controle-acesso.js">
+    </script>
+
+</body>
+
+</html>
