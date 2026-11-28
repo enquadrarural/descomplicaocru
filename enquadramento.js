@@ -128,59 +128,79 @@ if (formulario) {
           ? (rendaAgro / rendaTotal) * 100
           : 0;
 
-      let porteProdutor =
+      /* ==========================
+   PORTE DO PRODUTOR
+========================== */
+
+let porteProdutor;
+
+if (rendaAgro <= 500000) {
+
+    porteProdutor =
+        "Pequeno Produtor";
+
+} else if (rendaAgro <= 3500000) {
+
+    porteProdutor =
+        "Médio Produtor";
+
+} else {
+
+    porteProdutor =
         "Grande Produtor";
 
-      if (rendaAgro <= 500000) {
+}
 
-        porteProdutor =
-          "Pequeno Produtor";
+/* ==========================
+   ENQUADRAMENTO (MCR)
+========================== */
 
-      } else if (
-        rendaAgro > 500000 &&
-        rendaAgro <= 2500000
-      ) {
+let enquadramento =
+    "Demais Produtores";
 
-        porteProdutor =
-          "Médio Produtor";
-      }
+/* PRONAF */
 
-      let enquadramento =
+if (
+
+    caf === "SIM" &&
+    rendaAgro <= 500000 &&
+    percentualAgro >= 50
+
+) {
+
+    enquadramento =
+        "PRONAF";
+
+}
+
+/* PRONAMP */
+
+else if (
+
+    (
+        caf === "NAO" ||
+        rendaAgro > 500000
+    )
+
+    &&
+
+    percentualAgro >= 80
+
+) {
+
+    enquadramento =
+        "PRONAMP";
+
+}
+
+/* DEMAIS PRODUTORES */
+
+else {
+
+    enquadramento =
         "Demais Produtores";
 
-      if (caf === "SIM") {
-
-        if (
-          rendaAgro <= 500000 &&
-          percentualAgro >= 50
-        ) {
-
-          enquadramento = "PRONAF";
-
-        } else if (
-          percentualAgro >= 80
-        ) {
-
-          enquadramento = "PRONAMP";
-        }
-
-      } else {
-
-        if (
-          percentualAgro >= 80
-        ) {
-
-          enquadramento = "PRONAMP";
-        }
-      }
-
-      if (enquadramento === "PRONAF") {
-
-        valores.leite *= 0.7;
-        valores.frutas *= 0.7;
-        valores.cafe *= 0.7;
-
-      }
+}
 
       const rendaAgroFinal =
         Object.values(valores).reduce(
